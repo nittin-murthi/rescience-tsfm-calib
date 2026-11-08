@@ -1,0 +1,11 @@
+{
+  "model": "tirex",
+  "dataset": "patents",
+  "trial_windows": 256,
+  "total_windows": 5727,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 1.48e-03 on 16 windows)",
+  "seconds": 10.0,
+  "load_seconds": 30.7,
+  "sec_per_window": 0.03905291389673948
+}

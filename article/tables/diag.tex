@@ -1,0 +1,24 @@
+\begin{tabular}{lllcccccc}
+\toprule
+ & & & \multicolumn{2}{c}{PCE} & \multicolumn{2}{c}{MASE} & \multicolumn{2}{c}{Paper T4} \\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Dataset & data & Model & ours & authors' agg. & ours & authors' agg. & PCE & MASE \\
+\midrule
+Crime & ours & Chronos-Bolt-S & 0.024 & 0.024 & 0.80 & 0.74 & -- & -- \\
+Crime & ours & TimesFM-2.5$^\dagger$ & 0.027 & 0.026 & 0.78 & 0.72 & 0.023 & 0.76 \\
+Crime & ours & ARIMA (64) & 0.065 & 0.065 & 1.03 & 0.97 & 0.168 & 0.83 \\
+Crime & ours & ARIMA ($T$)$^\ast$ & 0.024 & 0.023 & 0.94 & 0.89 & 0.168 & 0.83 \\
+Crime & authors' & Chronos-Bolt-S & 0.014 & 0.013 & 0.83 & 0.74 & -- & -- \\
+Crime & authors' & TimesFM-2.5$^\dagger$ & 0.019 & 0.018 & 0.81 & 0.73 & 0.023 & 0.76 \\
+Crime & authors' & ARIMA (64) & 0.065 & 0.065 & 0.99 & 0.91 & 0.168 & 0.83 \\
+Crime & authors' & ARIMA ($T$)$^\ast$ & 0.028 & 0.027 & 0.91 & 0.83 & 0.168 & 0.83 \\
+Heart-Rate & ours & Chronos-Bolt-S & 0.053 & 0.048 & 1.55 & 1.26 & -- & -- \\
+Heart-Rate & ours & TimesFM-2.5$^\dagger$ & 0.036 & 0.015 & 1.47 & 1.18 & 0.052 & 1.10 \\
+Heart-Rate & ours & ARIMA (64) & 0.066 & 0.064 & 1.84 & 1.54 & 0.204 & 1.12 \\
+Heart-Rate & ours & ARIMA ($T$)$^\ast$ & 0.055 & 0.050 & 1.59 & 1.30 & 0.204 & 1.12 \\
+Heart-Rate & authors' & Chronos-Bolt-S & 0.060 & 0.044 & 1.29 & 1.12 & -- & -- \\
+Heart-Rate & authors' & TimesFM-2.5$^\dagger$ & 0.053 & 0.018 & 1.26 & 1.09 & 0.052 & 1.10 \\
+Heart-Rate & authors' & ARIMA (64) & 0.066 & 0.059 & 1.57 & 1.37 & 0.204 & 1.12 \\
+Heart-Rate & authors' & ARIMA ($T$)$^\ast$ & 0.063 & 0.055 & 1.35 & 1.18 & 0.204 & 1.12 \\
+\bottomrule
+\end{tabular}

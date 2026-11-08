@@ -1,0 +1,10 @@
+{
+  "model": "tirex",
+  "hf_id": "NX-AI/TiRex",
+  "dataset": "heartrate",
+  "n_windows": 1794,
+  "seconds": 1490.5,
+  "crossing_frac": 4.35479375696767e-06,
+  "peak_rss_mb": 705.2,
+  "path": "results/determinism/heartrate__tirex__repeat.npz"
+}

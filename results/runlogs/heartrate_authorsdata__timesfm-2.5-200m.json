@@ -1,0 +1,10 @@
+{
+  "model": "timesfm-2.5-200m",
+  "hf_id": "google/timesfm-2.5-200m-pytorch",
+  "dataset": "heartrate_authorsdata",
+  "n_windows": 1416,
+  "seconds": 42.9,
+  "crossing_frac": 0.0,
+  "peak_rss_mb": 2059.2,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/heartrate_authorsdata__timesfm-2.5-200m.npz"
+}

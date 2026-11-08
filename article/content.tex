@@ -1,0 +1,487 @@
+% Replicates: Adler et al., arXiv:2510.16060v2 (27 May 2026). All numbers below come from results/*.csv via
+% scripts/make_tables.py (tables/*.tex, tables/numbers.tex) unless quoted from the paper with a table reference.
+\input{tables/numbers.tex}
+\sloppy
+\input{tables/arima_ctx_numbers.tex}
+
+\section{Introduction}
+
+Adler et al.\supercite{adler2026beyond} study whether time series foundation models (TSFMs) produce
+well-calibrated probabilistic forecasts. Their headline finding is that zero-shot TSFMs
+are better calibrated than the two baselines, ARIMA and N-BEATS\supercite{oreshkin2020nbeats}, and that their
+probabilistic calibration error (PCE) is ``in general close to or below 5\%'' (\S4.1, Fig.~3 and Table~4 of
+arXiv:2510.16060v2). This report is an independent \emph{partial} replication of that one claim, on all six of
+the paper's real datasets.
+We wrote our implementation from the paper text, and consulted the authors' code\supercite{authorsrepo}
+only after our own results existed, and only to diagnose differences (Section~\ref{sec:diag}).
+
+\section{Claim tested and scope}
+\label{sec:scope}
+
+\paragraph{Claim C1 (Paper \S4.1, Fig.~3 top, Table~4 PCE block).} We test two sub-claims, separately for each dataset:
+\begin{itemize}
+\item \textbf{C1a (ranking):} every tested TSFM has lower PCE than the ARIMA and N-BEATS baselines.
+\item \textbf{C1b (level):} every tested TSFM has PCE close to or below 0.05.
+\end{itemize}
+The paper makes C1b ``across all datasets, except for the relatively difficult Patents dataset'' (\S4.1). We
+therefore report the Patents C1b number but mark it as not claimed by the paper.
+Before running any model we fixed ``close to'' as PCE $\le 0.06$ (\texttt{PLAN.md}). We also report the
+signed centered calibration error (CCE), scaled interval width (SIW) and MASE, but we give no separate verdict on them.
+The paper's other analyses are out of scope: prediction heads (\S4.3), autoregressive long-horizon forecasting (\S4.4),
+synthetic data, and GIFT-Eval.
+
+\paragraph{Datasets.} We use all six real datasets of the paper (Table~1), in the paper's order:
+\begin{itemize}
+\item \textbf{Reviews}: hourly review counts per Amazon/Google category, from the authors' UCI
+deposit\supercite{reviewsuci}; \nserRev{} series (Table~1: 239; the deposit has 235), $T{=}512$, season 24.
+\item \textbf{Shopping (M5)}: daily unit sales per department $\times$ store, which we rebuilt from the raw M5
+file\supercite{makridakis2022m5}; \nserMfive{} series, $T{=}512$, season 7. Our build equals the authors' file exactly.
+\item \textbf{NYC Crime}: daily complaint counts per borough\supercite{nypd}; 5 series, $T{=}512$, ARIMA season 7.
+\item \textbf{Heart-Rate}: meditation ``metron'' records\supercite{meditation}; 6 series, $T{=}128$.
+\item \textbf{Glucose}: Dexcom G6 CGM\supercite{bigideas}; 16 series at 5-minute resolution, $T{=}512$.
+\item \textbf{Patents}: monthly US patent counts per field and category\supercite{marco2015patents}, from the
+authors' released file\supercite{authorsrepo}; \nserPat{} series, $T{=}128$, season 1.
+\end{itemize}
+Crime, Heart-Rate and Glucose were built by us from the public sources and run on a CPU machine. Reviews, M5 and
+Patents were run later, in two stages, on an Apple M2 Max (Section~\ref{sec:repro}). For Reviews and Patents we use
+the authors' released data (tagged \texttt{[FROM AUTHORS' DATA]} in \texttt{src/data.py}), because the paper's
+category selection cannot be rebuilt from its description.
+
+\paragraph{Models.} We ran four TSFMs and two baselines:
+\begin{itemize}
+\item Chronos-Bolt-small and -base\supercite{ansari2024chronos}. The base model is the paper's checkpoint.
+\item TimesFM-2.5-200M\supercite{das2024timesfm}, a \emph{substitute} for the paper's TimesFM-2.0-500M, chosen for CPU budget.
+\item TiRex\supercite{auer2025tirex}, the same checkpoint as in the paper, run on the CPU backend.
+\item ARIMA, using StatsForecast AutoARIMA\supercite{statsforecast,hyndman2008autoarima}.
+\item N-BEATS, using NeuralForecast\supercite{neuralforecast} with the paper's full 64-configuration grid (and a reduced 8-configuration grid as a sensitivity check).
+\end{itemize}
+We did not run Moirai~2.0 or YingLong.
+
+\section{Methods}
+
+\paragraph{Protocol (Paper App.~A.2, Table~2).} Forecasts cover $L{=}64$ steps from rolling origins. Origins start at
+each dataset's train/test split and are shifted by a stride $d$ until the end of the series. The model sees the
+last $T$ observations as context. We chose $d$ per dataset by closeness to the forecast counts in
+Table~1 (assumption A-01): $d{=}8$ for Reviews, $d{=}4$ for Crime and $d{=}1$ for the others. Every forecast has a
+full 64-step target. This gives:
+\begin{itemize}
+\item Reviews: \nwinRev{} forecasts over \nserRev{} series (Table~1 of the paper: 360,490);
+\item M5: \nwinMfive{} over \nserMfive{} series (62,160; no $d\in\{1,4,8\}$ reproduces this under the Table~2 split);
+\item Crime: \nwinCrime{} over \nserCrime{} series (4,110);
+\item Heart-Rate: \nwinHR{} over \nserHR{} series (1,800);
+\item Glucose: \nwinGlucose{} over \nserGlucose{} series (13,840);
+\item Patents: \nwinPat{} over \nserPat{} series (10,956, which is matched only if origins with partial
+targets are counted).
+\end{itemize}
+The TSFMs are used zero-shot and their native quantile outputs at $q\in\{0.1,\dots,0.9\}$ are read directly.
+Where quantiles crossed, we re-sorted them; this affected at most $\maxCrossFrac$ of values
+(\maxCrossWhere; \texttt{results/runlogs/*.json}).
+
+\paragraph{ARIMA (App.~A.2, A.4).} AutoARIMA selects the order on each series' training split. That order is then
+refit before every forecast. Quantiles come from a Gaussian matched to the model's predictive mean and standard
+deviation. The paper is ambiguous about the refit window: App.~A.2 says ``max lag (context) 64'', while A.4 says
+``refit on all earlier data''. Our primary run, \emph{ARIMA (64)}, refits on the last 64 points. A sensitivity run,
+\emph{ARIMA ($T$)}, refits on the same $T$ points the TSFMs see. A post-hoc guarded variant handles 22 of
+13{,}040 Glucose windows whose fits diverged; it re-estimates any fit whose quantiles leave ten times the
+context range.
+
+\paragraph{N-BEATS (App.~A.2, Table~3).} We train one global model per dataset on the training split. The
+primary baseline searches the paper's full grid of 64 configurations: epochs $\{100,1000\}$, learning rate
+$\{0.001,0.0001\}$, early-stop patience $\{-1,2\}$, blocks $\{(1,1,1),(3,3,3)\}$, validation check steps
+$\{10,100\}$, and loss \{Normal distribution with 100 samples, Quantile\}. We read epochs as optimiser steps.
+Early stopping uses the last 64 training steps for validation (assumption). As a sensitivity check we also run
+a reduced grid of 8 quantile-loss configurations without early stopping. ``Select the model with the lowest
+WQL on the same data'' can be read two ways, and we run both:
+\begin{itemize}
+\item \emph{in-sample} (primary): select on rolling windows inside the training split;
+\item \emph{hold-out} (sensitivity): select on the last 64 training steps, then refit on the full split.
+\end{itemize}
+\noindent\textbf{Seeds.} N-BEATS training is the only stochastic component of the pipeline. ARIMA has no random
+component. Chronos-Bolt, TimesFM and TiRex output quantiles directly, without sampling
+(Section~\ref{sec:seeds}). Every N-BEATS variant is therefore run with seeds 0, 1 and 2. The full grid makes
+2{,}304 fits (64 configurations $\times$ 3 seeds $\times$ 2 readings $\times$ 6 datasets) and was run on an
+Apple M2 Max GPU (MPS) (Section~\ref{sec:repro}). The reduced grid was run only on Crime, Heart-Rate and Glucose.
+
+\paragraph{Metrics (Paper \S3.1, Eqs.~1--4).}
+\begin{itemize}
+\item PCE $=\frac{1}{|Q|}\sum_q |q-\hat F(q)|$, where $\hat F(q)$ is the empirical frequency of $y\le\hat y^{q}$.
+\item CCE $=\frac{1}{|S|}\sum_s \bigl(s-\mathrm{coverage}_s\bigr)$, with $S{=}\{0.2,0.4,0.6,0.8\}$. CCE is signed:
+positive means overconfident, negative means under-confident.
+\item SIW and MASE as in Eqs.~2 and~4.
+\end{itemize}
+Eq.~1 is written for a single forecast, but the paper does not say how it is aggregated (assumption A1).
+Our primary reading pools the indicators over all windows and steps of a series, then averages over series.
+We also report the literal per-window average, PCE$_{\mathrm{win}}$. Before running any model we checked that a
+perfectly calibrated forecaster scores about 0.04 under the per-window reading. That is above most TSFM values in
+Table~4, so the per-window reading is unlikely to be the paper's. The dataset value is the mean over series, with
+the standard error of the mean (SEM) taken across series, as in the captions of Figs.~2--3.
+
+\paragraph{Traceability.} Each source file names the paper version (v2) it implements. Code is tagged
+\texttt{[Paper \S x, Eq.~(n)]} or \texttt{[ASSUMPTION: ...]}. \texttt{TRACEABILITY.md} maps paper elements to
+file:line and lists all assumptions.
+
+\section{Results}
+
+Tables~\ref{tab:mainnew} (Reviews, M5, Patents) and~\ref{tab:main} (Crime, Heart-Rate, Glucose) list our
+results next to the corresponding Table~4 values of the paper. Figure~\ref{fig:pce} plots the PCE and CCE values.
+
+\begin{table}[h!]\centering\scriptsize\setlength\tabcolsep{3pt}
+\input{tables/main_new.tex}
+\caption{Results on Reviews, M5 and Patents (mean over series; $\pm$ SEM across series) next to the paper's
+Table~4 values. Forecasts were made on an Apple M2 Max; Patents and M5 were re-evaluated on our machine from the
+returned forecasts, Reviews metrics are those returned (Section~\ref{sec:validity}). Sources:
+\texttt{results/summary.csv} and \texttt{results/paper\_table4\_subset.csv}. Markers as in
+Table~\ref{tab:main}. The ARIMA SIW and MASE on Reviews are dominated by a few exploding refits on near-zero
+series; PCE is not affected by the scale of the error.}
+\label{tab:mainnew}
+\end{table}
+
+\begin{table}[h!]\centering\scriptsize\setlength\tabcolsep{3pt}
+\input{tables/main.tex}
+\caption{Results on Crime, Heart-Rate and Glucose (mean over series; $\pm$ SEM across series) next to the paper's Table~4
+values (App.~B.1, arXiv v2). Sources: \texttt{results/summary.csv} and \texttt{results/paper\_table4\_subset.csv}.
+The paper's columns give the paper's own model: Chronos-Bolt-base, TimesFM-2.0-500M, TiRex, ARIMA, N-BEATS.
+PCE$_{\mathrm{win}}$ is the literal per-window reading of Eq.~1.
+$^\dagger$Substitute model (paper: TimesFM-2.0-500M).
+$^\ast$Sensitivity variant; the paper value shown is that of the primary baseline.}
+\label{tab:main}
+\end{table}
+
+\begin{figure}[h!]\centering
+\includegraphics[width=\linewidth]{figures/pce_cce.pdf}
+\caption{PCE (top) and signed CCE (bottom) for all six datasets. Bars show this replication (mean $\pm$ SEM across
+series). Black crosses show the paper's Table~4 value for the corresponding model: on the Chronos-Bolt-base, TiRex,
+ARIMA (64) and N-BEATS (in-sample) bars, and on the TimesFM-2.5 bar for the paper's TimesFM-2.0. The dashed line
+marks PCE $=0.05$. Generated by \texttt{src/make\_figures.py}.}
+\label{fig:pce}
+\end{figure}
+
+\paragraph{C1b (level).} On the five datasets where the paper makes the claim, every TSFM has PCE at or below 0.06:
+\begin{itemize}
+\item Reviews: \minTSFMpceRev--\maxTSFMpceRev{} (paper's TSFMs: 0.012--0.015);
+\item M5: \minTSFMpceMfive--\maxTSFMpceMfive{} (0.031--0.052);
+\item Crime: \minTSFMpceCrime--\maxTSFMpceCrime{} (0.014--0.035);
+\item Heart-Rate: \minTSFMpceHR--\maxTSFMpceHR{} (0.048--0.077);
+\item Glucose: \minTSFMpceGlucose--\maxTSFMpceGlucose{} (0.031--0.050).
+\end{itemize}
+On Patents, which the paper exempts, our TSFMs reach \minTSFMpcePat--\maxTSFMpcePat, inside the paper's range of
+0.154--0.259 or below it. The paper's ranges above are over all five TSFMs of its Table~4.
+
+\paragraph{C1a (ranking).} Against the primary in-sample N-BEATS (full grid), every TSFM has lower PCE on all
+six datasets, for every seed (\cOneAholdsFull/\cOneArunsFull{} runs; Table~\ref{tab:seeds}). Against the primary
+ARIMA (64) it holds on four of six datasets:
+\begin{itemize}
+\item it holds on Reviews (ARIMA PCE \pceArimaRev), Crime (\pceArimaCrime), Heart-Rate (\pceArimaHR) and Glucose
+(\pceArimaGlucose);
+\item it fails on M5, where ARIMA (64) reaches \pceArimaMfive{} and TimesFM-2.5 (\pceTfmMfive) is above it. The
+paper's own checkpoints, Chronos-Bolt-base (\pceCbMfive) and TiRex (\pceTrxMfive), are below it;
+\item it fails on Patents for every TSFM: ARIMA (64) reaches \pceArimaPat, below the best TSFM
+(\minTSFMpcePat).
+\end{itemize}
+Table~\ref{tab:verdict} lists each comparison, together with the number of series-level wins (TSFM $\times$
+series pairs). Where C1a holds, the margin is much smaller than in the paper:
+\begin{itemize}
+\item The paper's ARIMA PCE is 0.176 (Reviews), 0.131 (M5), 0.168 (Crime), 0.204 (Heart-Rate), 0.141 (Glucose)
+and 0.247 (Patents) (Table~4). Our ARIMA (64) is at \pceArimaRev, \pceArimaMfive, \pceArimaCrime,
+\pceArimaHR, \pceArimaGlucose{} and \pceArimaPat.
+\item The ranking is not robust to the ARIMA refit window. ARIMA ($T$) reaches PCE \pceArimaTCrime{} on Crime,
+\pceArimaTHR{} on Heart-Rate and \pceArimaTMfive{} on M5, which is below or level with the worst TSFM
+(\maxTSFMpceCrime, \maxTSFMpceHR{} and \maxTSFMpceMfive). On Reviews (\pceArimaTRev) and Glucose
+(\pceArimaTGlucose) it stays above every TSFM.
+\item N-BEATS with hold-out selection is far better calibrated than in-sample N-BEATS. With the full grid its
+mean over seeds is \pceNbeatsFHRevMean{} (Reviews), \pceNbeatsFHMfiveMean{} (M5), \pceNbeatsFHCrimeMean{}
+(Crime), \pceNbeatsFHHRMean{} (Heart-Rate), \pceNbeatsFHGlucoseMean{} (Glucose) and \pceNbeatsFHPatMean{}
+(Patents). It beats the worst TSFM in \the\numexpr\cOneArunsFullH-\cOneAholdsFullH\relax{} of
+\cOneArunsFullH{} runs: all three Crime seeds, one M5 seed and two Patents seeds.
+\end{itemize}
+
+
+\paragraph{Seed variability and selected configurations.}\label{sec:seeds}
+Table~\ref{tab:seeds} gives N-BEATS PCE, CCE and MASE as mean $\pm$ SD across seeds 0--2, and the number of seeds
+for which C1a holds against that run.
+
+\emph{In-sample selection} is stable. With the full grid, it picks 1000 steps, learning rate $10^{-3}$, blocks
+$(3,3,3)$, quantile loss and no early stopping for every one of the six datasets and every seed; only the inert validation-check setting
+varies (\texttt{results/runlogs/*full-seed*.json}). That configuration nearly memorises the training windows
+(selection WQL \selWQLmin--\selWQLmax{} on the reduced grid), and its PCE SD is at most 0.002.
+
+\emph{Hold-out selection} is seed-sensitive. Its choice changes between seeds: on Crime it picks a Normal-loss
+model for all three seeds, and on Glucose seed~0 picks a Normal-loss model with PCE 0.174, hence the large SD.
+On Patents the hold-out SD is \pceNbeatsFHPatSD.
+
+C1a holds against full-grid in-sample N-BEATS in \cOneAholdsFull/\cOneArunsFull{} runs, and against full-grid
+hold-out N-BEATS in \cOneAholdsFullH/\cOneArunsFullH{} (six datasets $\times$ three seeds). The failures are all
+three Crime seeds, M5 seed~2 and Patents seeds 1 and~2. On the reduced grid (Crime, Heart-Rate and Glucose only)
+the counts are \cOneAholdsRed/\cOneArunsRed{} (in-sample) and \cOneAholdsRedH/\cOneArunsRedH{} (hold-out).
+
+The TSFMs need no seeds. A repeat of every TSFM on Heart-Rate (\texttt{results/determinism.csv}) gives bitwise
+identical quantiles for Chronos-Bolt (small, base) and TimesFM-2.5. TiRex on the CPU torch backend differs only
+at floating-point level (median absolute difference 0.002~bpm), and its PCE changes by $1.5\times10^{-5}$.
+
+\begin{table}[h!]\centering\scriptsize\setlength\tabcolsep{3pt}
+\input{tables/seeds.tex}
+\caption{N-BEATS across seeds (mean $\pm$ SD over seeds 0--2; \texttt{results/seed\_summary.csv},
+\texttt{results/seed\_verdict.csv}). Full (64): the paper's Table~3 grid, run on an Apple M2 Max (MPS). Reduced (8): the
+sensitivity grid, run on the CPU box for the first three datasets only. Tables~\ref{tab:mainnew} and~\ref{tab:main} show seed~1. ``C1a holds'' counts
+the seeds for which every TSFM has lower PCE than that N-BEATS run.}
+\label{tab:seeds}
+\end{table}
+
+\paragraph{Sensitivity: ARIMA refit context.}\label{sec:arimactx}
+The paper gives two descriptions of the ARIMA context: ``max lag (context) \ldots{} 64'' (App.~A.2) and a refit
+``on all earlier data'' (App.~A.4). We therefore repeat ARIMA on Crime, Heart-Rate and Glucose with refit context $W\in\{32,64,128,256,T\}$, where
+$T$ is the TSFM context (512 or 128). This grid is our assumption and is not in the paper. The AutoARIMA order is
+still selected once on the training split, and only the refit window changes
+(\texttt{scripts/run\_arima\_ctx\_sweep.sh}, \texttt{results/arima\_ctx\_sweep.csv}). Table~\ref{tab:arimactx}
+and Figure~\ref{fig:arimactx} give the results.
+\begin{itemize}
+\item \emph{Crime.} PCE falls steadily as $W$ grows, from \ctxPceMaxCrime{} to \ctxPceMinCrime. C1a against ARIMA
+fails from $W=256$: one TSFM is beaten at 256 and three of four at $T=512$.
+\item \emph{Heart-Rate.} PCE also falls as $W$ grows. C1a fails at $W=T=128$, where ARIMA (0.0547) is just below
+the worst TSFM (0.0553, well within one SEM of 0.012).
+\item \emph{Glucose.} PCE rises slightly with $W$ (\ctxPceMinGlucose--\ctxPceMaxGlucose), and C1a holds for
+every $W$.
+\end{itemize}
+On Reviews, M5 and Patents we ran only $W\in\{64,T\}$ (Table~\ref{tab:mainnew}).
+C1a against ARIMA therefore rests on the short refit context of App.~A.2. Under the App.~A.4 reading
+(approximated by $W{=}T$) it fails on four of six datasets: Crime, Heart-Rate, M5 and Patents. The shortest context moves Crime and Heart-Rate ARIMA towards the paper's poorly calibrated,
+under-confident ARIMA, but no $W$ reaches the paper's PCE of 0.14--0.20 (Table~4), and on the other three datasets neither
+$W{=}64$ nor $W{=}T$ comes near the paper's 0.131--0.247. The context length alone
+therefore does not explain the gap.
+
+\begin{table}[h!]\centering\scriptsize
+\input{tables/arima_ctx.tex}
+\caption{ARIMA refit-context sweep (\texttt{results/arima\_ctx\_sweep.csv}). ``TSFMs beaten'' counts TSFMs with
+PCE $\geq$ ARIMA($W$). C1a holds if none is beaten. $^\ddagger$A few explosive refits inflate the mean MASE on
+Glucose. At $W=64$ the guarded variant (Methods) brings MASE to 8.472 and changes PCE only from 0.0551 to 0.0549.}
+\label{tab:arimactx}
+\end{table}
+\begin{figure}[h!]\centering
+\includegraphics[width=\linewidth]{figures/arima_ctx.pdf}
+\caption{ARIMA PCE ($\pm$ SEM across series) against the refit context $W$. The shaded band is the range of our
+four TSFMs; the dashed line is the paper's ARIMA (Table~4).}
+\label{fig:arimactx}
+\end{figure}
+
+\paragraph{Supporting observations.}
+\begin{itemize}
+\item \textbf{Direction of the baselines' errors.} Like the paper, we find ARIMA (64) under-confident (negative
+CCE) on five datasets, but less so: for example, Crime \cceArimaCrime{} against the paper's $-0.337$, and Reviews
+\cceArimaRev{} against $-0.351$. On Patents both the paper's ARIMA (0.031) and ours (\cceArimaPat) are slightly
+positive.
+\item \textbf{N-BEATS.} Unlike the paper, our in-sample N-BEATS is \emph{overconfident} on Reviews, M5, Crime,
+Heart-Rate and Glucose, and the full grid does not change this. Full-grid in-sample CCE averages
+\cceNbeatsFRevMean{} (Reviews), \cceNbeatsFMfiveMean{} (M5), \cceNbeatsFCrimeMean{} (Crime),
+\cceNbeatsFHRMean{} (Heart-Rate) and \cceNbeatsFGlucoseMean{} (Glucose), against the paper's $-0.040$, $-0.203$,
+$-0.207$, $-0.243$ and $-0.172$. On Patents both are overconfident (ours \cceNbeatsFPatMean, paper 0.322). Among all
+\the\numexpr\cOneArunsRed+\cOneArunsRedH+\cOneArunsFull+\cOneArunsFullH\relax{} full- and reduced-grid runs,
+CCE is negative only in \cceNegFullH{} full-grid hold-out runs (Crime seed~2 and Patents seed~1).
+\item \textbf{TSFMs.} The TSFMs show no consistent CCE sign, in line with the paper.
+\item \textbf{MASE.} Our TSFM MASE differs from Table~4 in level: higher on Reviews, Crime, Heart-Rate and Glucose,
+about level on M5 and lower on Patents. On the first three datasets we traced this to a difference in definition
+(Section~\ref{sec:diag}); we did not repeat that diagnosis on the other three.
+\end{itemize}
+
+\paragraph{Validity of the forecasts run on the M2 Max.}\label{sec:validity}
+Reviews, M5 and Patents were forecast on another machine, so before using them we checked them against the
+code and data in this repository. The checks are in \texttt{scripts/verify\_returned\_forecasts.py} and
+\texttt{scripts/verify\_returned\_stage2.py}, and their outputs in \texttt{results/stage1\_validity/}.
+\begin{itemize}
+\item \emph{Code and data.} The source, scripts, environment pins, data checksums and model revisions in both
+returned packages are byte-identical to the repository. The data checksums matched on both machines.
+\item \emph{M5 and Patents (forecasts returned).} For all 24 runs the windows (target, series, origin) equal a
+rebuild on our machine (\winEqPat{} Patents, \winEqMfive{} M5), quantiles are finite and sorted, and $T$, $L$
+match Table~2. Re-evaluating the returned forecasts here reproduces the returned metrics exactly (max relative
+difference \reevalMaxDiff). Every N-BEATS run scored all 64 configurations and kept the argmin-WQL configuration.
+\item \emph{TSFMs.} We re-forecast windows on our CPU at the pinned revisions (Table~\ref{tab:validity}).
+Chronos-Bolt and TimesFM-2.5 agree to $1.5\times10^{-5}$ relative error with identical coverage indicators. TiRex,
+which ran on MPS, differs at float level (relative error up to 0.05 on 1{,}024 windows), but at least 99.9\% of coverage
+indicators agree and PCE on those windows agrees to within 0.0001.
+\item \emph{ARIMA.} AutoARIMA re-selects the same orders on Patents (\arimaOrdersEqPat) but not on two M5 series
+(\arimaOrdersEqMfive), and short spot re-forecasts differ. We attribute this to the platforms' floating-point arithmetic:
+every affected window is a high-order fit on a short context, where small numerical differences move the
+optimiser to a different optimum. We therefore re-ran all four
+M5/Patents ARIMA runs in full on our x86 machine. PCE changes by at most \pceBoxDiffArimaMfive{} (M5 ARIMA (64))
+and no verdict changes (\texttt{results/stage1\_validity/arima\_crossplatform.csv}, \texttt{*-box} rows of
+\texttt{results/verdict.csv}). The tables use the M2 Max runs.
+\item \emph{Reviews (no forecasts returned).} The Reviews forecast files were not in the returned package, so
+Reviews cannot be re-evaluated or re-forecast here. We checked what the files allow: every run covers all \nwinRev{} windows,
+the TSFM model ids match, all six N-BEATS runs scored 64 configurations and kept the argmin, and the returned
+summary equals the mean of the returned per-series metrics. The Reviews numbers are therefore the least
+independently verified in this report.
+\end{itemize}
+None of the returned forecasts failed a check that would require a re-run.
+
+\begin{table}[h!]\centering\scriptsize\setlength\tabcolsep{3pt}
+\input{tables/validity.tex}
+\caption{Checks on the forecasts returned from the M2 Max. Source: \texttt{results/stage1\_validity/}. TSFM rows
+re-forecast the first windows on our CPU at the pinned revision and compare quantiles (max relative error), the
+coverage indicators $\mathbf 1\{y\le\hat y^q\}$ and the pooled PCE over the same windows. ARIMA rows give the
+re-forecast error on 32 windows ($^\S$platform-dependent optimiser, see text) and the dataset PCE of the full
+re-run on x86. N-BEATS: grid complete, selected configuration is the argmin of the selection WQL.}
+\label{tab:validity}
+\end{table}
+
+\section{Diagnosis against the authors' code}
+\label{sec:diag}
+
+Only after the results above existed did we inspect the authors' repository\supercite{authorsrepo}
+(commit \texttt{b60bfd9}). We copied no code into the pipeline. The full notes are in \texttt{DIAGNOSIS.md}.
+Table~\ref{tab:diag} recomputes some of our forecasts in two ways:
+\begin{itemize}
+\item with the authors' aggregation, which we re-implemented from their metric definitions;
+\item on the authors' released Crime and Heart-Rate data, run through our pipeline.
+\end{itemize}
+This diagnosis covers the first three datasets only. Reviews and Patents already use the authors' data, and our M5
+equals theirs.
+
+\begin{table}[h!]\centering\scriptsize\setlength\tabcolsep{3pt}
+\input{tables/diag.tex}
+\caption{Diagnosis only. ``authors' agg.'' = PCE pooled over the whole dataset; MASE with a global in-sample naive
+denominator, clipped at 50 (authors' \texttt{src/metrics.py}). Sources: \texttt{results/diagnosis\_authors\_style\_metrics.csv} and
+\texttt{results/summary.csv} (rows \texttt{*\_authorsdata}).}
+\label{tab:diag}
+\end{table}
+
+\begin{enumerate}
+\item \textbf{PCE aggregation.} The authors pool the indicators over all series, windows and horizons, then
+average over $q$. This is close to our primary reading. For example, on Crime the two readings agree to about
+0.001 for every model. The literal per-window reading is not what the authors compute.
+\item \textbf{MASE.} The authors scale by a single in-sample one-step naive MAE pooled over all series, and clip
+at 50. With this definition our TSFM MASE values fall into the paper's ranges (Table~\ref{tab:diag}). The MASE gap
+is therefore definitional.
+\item \textbf{Data.} We compared our data with the authors' releases:
+\begin{itemize}
+\item Heart-Rate: the authors use the same six subjects as we do, but on a 1-second grid (598 steps) instead of
+beat index.
+\item Glucose: the authors align subjects on relative time, which confirms our assumption.
+\item Crime: the counts differ (correlation 0.72--0.85), which suggests the authors used complaint occurrence date
+where we used report date.
+\end{itemize}
+On the authors' data, the qualitative picture is unchanged.
+\item \textbf{ARIMA and N-BEATS: not resolved.} The repository contains no baseline code, so the large gap
+between our ARIMA (PCE $\approx0.06$) and the paper's (0.14--0.20) cannot be explained from the code. The same
+holds for the opposite CCE sign of our N-BEATS. The gap persists on the authors' data and under their aggregation.
+\end{enumerate}
+
+\section{Verdict}
+
+\begin{table}[h!]\centering\scriptsize\setlength\tabcolsep{3pt}
+\input{tables/verdict.tex}
+\caption{Per-dataset checks of C1a and C1b (\texttt{results/verdict.csv}; N-BEATS rows are seed~1). ``Series-pair
+wins'' counts the (TSFM, series) pairs in which the TSFM has lower per-series PCE than the baseline. ``Not
+claimed'': the paper exempts Patents from C1b (\S4.1).}
+\label{tab:verdict}
+\end{table}
+
+\begin{itemize}
+\item \textbf{C1b (TSFM PCE close to or below 5\%): reproduced} on all five datasets where the paper claims it
+(Reviews, M5, Crime, Heart-Rate, Glucose), with four TSFMs including a substitute TimesFM. On Patents, which the
+paper exempts, our TSFM PCE (\minTSFMpcePat--\maxTSFMpcePat) is as high as the paper's.
+\item \textbf{C1a (TSFMs better calibrated than the baselines): partially reproduced.}
+\begin{itemize}
+\item Against full-grid N-BEATS with in-sample selection, every TSFM has lower PCE on all six datasets and for
+every seed.
+\item Against ARIMA (64), every TSFM has lower PCE on Reviews, Crime, Heart-Rate and Glucose. On M5 the
+substitute TimesFM-2.5 is above ARIMA (64), and on Patents every TSFM is.
+\item Where it holds, the margin is a fraction of the paper's: our ARIMA is far better calibrated than the
+paper's on every dataset.
+\item An ARIMA refit on the same context as the TSFMs matches or beats some TSFMs on Crime, Heart-Rate, M5 and
+Patents.
+\item With hold-out selection, N-BEATS beats the worst TSFM on Crime (all seeds), M5 (one seed) and Patents
+(two seeds).
+\item The paper's very poorly calibrated baselines could not be reproduced, and the released code does not
+include the baselines.
+\end{itemize}
+\end{itemize}
+Overall verdict on the main calibration claim: \textbf{partially reproduced}.
+
+\section{Deviations, limitations and incomplete items}
+\label{sec:incomplete}
+\begin{itemize}
+\item \textbf{Model substitution.} TimesFM-2.5-200M replaces TimesFM-2.0-500M. Moirai~2.0 and YingLong were not run.
+\item \textbf{N-BEATS grid.} The full Table~3 grid was run, but the paper does not describe how early stopping
+gets its validation data, and our choice is an assumption. Full-grid runs used MPS, other runs the CPU; GPU
+training is not bit-for-bit reproducible.
+\item \textbf{Datasets.} All six real datasets are tested. The stride is assumed (A-01), and our forecast counts
+differ from Table~1 on M5 and Patents (Methods). Reviews has 235 series instead of 239. Data construction for
+Crime, Heart-Rate and Glucose differs from the authors' releases as described in Section~\ref{sec:diag}.
+\item \textbf{Hardware.} Crime, Heart-Rate and Glucose ran on a CPU machine, except the full N-BEATS grid.
+Reviews, M5 and Patents ran entirely on an Apple M2 Max: Chronos-Bolt, TiRex and N-BEATS on MPS, TimesFM-2.5 on the
+CPU (MPS has no float64), ARIMA on the CPU. TiRex never used its CUDA kernels.
+\item \textbf{Metric levels.} SIW and WQL use definitions that differ in absolute level from the authors' code.
+Neither is part of the tested claim.
+\item \textbf{Uncertainty.} The TSFM and ARIMA values come from one deterministic run each, so their uncertainty is
+the SEM across series. N-BEATS also has an SD across 3 seeds (Table~\ref{tab:seeds}).
+\end{itemize}
+
+\paragraph{Limitations and anticipated questions.}\label{sec:limits}
+\begin{itemize}
+\item \emph{Reviews is checked less than the other datasets.} Its forecasts were not returned, so its metrics come
+from the same \texttt{evaluate.py} run on the M2 Max and are merged as returned
+(\texttt{src/evaluate.py -{}-include-returned results/stage2}). Section~\ref{sec:validity} lists what was checked.
+\item \emph{Patents.} The paper exempts Patents from the 5\% level, and its own YingLong PCE (0.259) there is above
+both baselines (0.242, 0.247). Our Patents result, ARIMA better calibrated than every TSFM, is the clearest
+contradiction of C1a in this report, but it rests on a baseline that is far better calibrated than the paper's.
+\item \emph{Model versions and sizes.} TimesFM-2.5-200M replaces the paper's TimesFM-2.0-500M (different
+architecture, smaller model). Chronos-Bolt is run in its small and base sizes. TiRex is run in its only released
+size. Moirai~2.0 and YingLong are not run. C1b holds for the paper's own Chronos-Bolt-base and TiRex checkpoints,
+so the substitute does not drive it. C1a, the per-model ranking, is not tested for TimesFM-2.0 itself.
+\item \emph{TiRex backend.} TiRex ran on its torch backend (CPU, or MPS for Reviews, M5 and Patents) instead of the
+CUDA kernels. On a CPU repeat it differs from itself only at float level (PCE changes by $1.5\times10^{-5}$), and
+MPS and CPU agree to within 0.0001 in PCE (Table~\ref{tab:validity}), but we cannot rule out a larger
+difference from the CUDA kernels.
+\item \emph{Aggregation choices.} Eq.~1 does not say how PCE is aggregated over series, windows and horizons. We
+report the mean over series (assumption A1) and check the authors' pooled reading in Section~\ref{sec:diag}. The
+two agree to about 0.001 on Crime. MASE levels depend on the scaling denominator. Neither choice changes the
+ranking we report.
+\item \emph{Crime data.} We count complaints by report date. The authors' release correlates only 0.72--0.85 with
+our counts, which suggests they used occurrence date. On their data the qualitative picture is the same
+(Table~\ref{tab:diag}).
+\item \emph{ARIMA context.} The paper gives two conflicting descriptions: a context of 64 (App.~A.2) and a refit
+on all earlier data (App.~A.4). We take 64 as primary and sweep the refit context in
+Section~\ref{sec:arimactx}. The sweep shows how far the C1a result against ARIMA depends on this setting.
+\item \emph{N-BEATS sign gap.} Our N-BEATS is overconfident, while the paper's is under-confident on five of six
+datasets. This holds on both grids, both selection readings and all three seeds, with two hold-out exceptions, and we have no explanation, because the baseline code is
+not released.
+\item \emph{No author contact.} We deliberately did not contact the authors. Every gap above is therefore resolved,
+if at all, only from the paper, the public repository and the public data. An author's answer could settle the
+ARIMA context, the N-BEATS early-stopping split and the Crime date field.
+\end{itemize}
+
+\section{Reproducibility}\label{sec:repro}
+The code, environment pins (\texttt{envs/}), model revisions (\texttt{envs/MODEL\_REVISIONS.md}) and run logs
+(\texttt{results/runlogs/}) are in the repository. \texttt{README.md} and \texttt{REPRODUCE.md} give the commands
+that regenerate every number and figure in this article from raw public data or the authors' released data.
+\begin{itemize}
+\item \emph{Software.} One Python virtual environment per model family (Chronos-Bolt, TimesFM, TiRex, StatsForecast,
+NeuralForecast), with exact pins in \texttt{envs/requirements-*.txt}: Python~3.11.17 with torch~2.5.1 (CPU wheels)
+on the CPU machine, and Python~3.12.11 with torch~2.5.1 on the M2 Max. Hugging Face checkpoints are pinned by
+revision hash in \texttt{envs/MODEL\_REVISIONS.md}.
+\item \emph{Data.} Raw data are not redistributed in the repository. \texttt{scripts/fetch\_raw\_data.sh} downloads
+the Crime, Heart-Rate and Glucose files and checks them against \texttt{data/raw/SHA256SUMS.txt};
+\texttt{scripts/prepare\_data.py} downloads Reviews, M5 and Patents from pinned sources and checks the processed
+files against \texttt{data/processed/CHECKSUMS.sha256}. The NYPD source is a live dataset, so a later download
+can differ from ours; the checksum check reports this.
+\item \emph{Outputs.} Forecast arrays (\texttt{results/forecasts/}) are too large for the repository and are not
+included. The per-series and per-dataset metrics from which all tables, figures and verdicts are built are
+included (\texttt{results/}), and \texttt{scripts/make\_tables.py} regenerates the article tables from them.
+\end{itemize}
+Hardware:
+\begin{itemize}
+\item Crime, Heart-Rate and Glucose, except the full N-BEATS grid, ran on a shared 8-core CPU machine with no GPU,
+with at most 4 threads per process.
+\item The full grid for those three datasets (18 runs) ran on an Apple M2 Max (32\,GB) with PyTorch~2.5.1 on MPS,
+Python~3.12 and NeuralForecast~3.1.9 (\texttt{results/runlogs/gpu\_env.txt}). It took 3\,h\,14\,min wall-clock in
+one uninterrupted pass, 533--1313\,s per run (\texttt{results/runlogs\_nbeats\_full.txt}). It was started with
+\texttt{bash run\_gpu.sh}, with code identical to the repository at commit \texttt{3e54d0c}.
+\item Reviews, M5 and Patents ran on the same M2 Max (Python~3.12.11, PyTorch~2.5.1) with
+\texttt{bash run\_stage1.sh} (Patents, M5) and \texttt{bash run\_stage2.sh} (Reviews), with code identical to
+commit \texttt{3dddf5f} (\texttt{STAGES.md}; logs \texttt{results/runlogs\_stage1.txt},
+\texttt{results/runlogs\_stage2.txt}, environments \texttt{results/runlogs/env\_stage\{1,2\}/}). The runner checks
+the device per model on 16 windows against the CPU and falls back to the CPU if they disagree or the device fails.
+\item The ARIMA cross-platform re-runs for M5 and Patents (\texttt{*-box}) ran on the CPU machine.
+\end{itemize}
+
+\section*{AI-assistance disclosure}
+The author used Grok 4.7 in preparing this replication.

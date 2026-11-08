@@ -1,0 +1,3 @@
+dataset,model,check,ok,value,detail
+patents,tirex,M_reforecast_spot_pinned_rev_K32,True,6.12e-03,"32 windows on box CPU, rev 63c74092; coverage-indicator agreement 0.9989; pooled PCE on these windows returned 0.0152 vs box 0.0151"
+m5,tirex,M_reforecast_spot_pinned_rev_K32,False,1.86e-02,"32 windows on box CPU, rev 63c74092; coverage-indicator agreement 0.9989; pooled PCE on these windows returned 0.0086 vs box 0.0087"

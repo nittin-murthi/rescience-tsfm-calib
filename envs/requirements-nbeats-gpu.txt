@@ -1,0 +1,12 @@
+# N-BEATS environment for a GPU machine (CUDA on Linux/Windows, MPS on Apple silicon), round 2 full grid.
+# Same library versions as envs/requirements-nbeats.txt (the box, CPU-only), without the +cpu torch build.
+# Linux + CUDA: the default PyPI torch 2.5.1 wheel ships CUDA 12.4 runtimes (needs NVIDIA driver >= 525).
+# macOS (M1/M2/M3): the same pin installs the MPS-enabled build.
+torch==2.5.1
+neuralforecast==3.1.9
+pytorch-lightning==2.5.6
+lightning-utilities==0.15.3
+torchmetrics==1.9.0
+numpy==2.4.6
+pandas==3.1.0
+scipy==1.17.1

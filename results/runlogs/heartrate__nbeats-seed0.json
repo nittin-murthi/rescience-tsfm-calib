@@ -1,0 +1,159 @@
+{
+  "model": "nbeats-seed0",
+  "select": "insample",
+  "grid_name": "reduced",
+  "seed": 0,
+  "device": "cpu",
+  "dataset": "heartrate",
+  "grid": [
+    {
+      "config_id": 0,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.11325935793640672,
+      "seconds": 10.8,
+      "device": "cpu"
+    },
+    {
+      "config_id": 1,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.06798443416827557,
+      "seconds": 22.5,
+      "device": "cpu"
+    },
+    {
+      "config_id": 2,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.2943893746432999,
+      "seconds": 8.8,
+      "device": "cpu"
+    },
+    {
+      "config_id": 3,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.24810979577634745,
+      "seconds": 24.1,
+      "device": "cpu"
+    },
+    {
+      "config_id": 4,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.0051532976241891165,
+      "seconds": 231.1,
+      "device": "cpu"
+    },
+    {
+      "config_id": 5,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.003687576199907874,
+      "seconds": 262.1,
+      "device": "cpu"
+    },
+    {
+      "config_id": 6,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.04832576868652721,
+      "seconds": 100.2,
+      "device": "cpu"
+    },
+    {
+      "config_id": 7,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.025426410951082716,
+      "seconds": 237.8,
+      "device": "cpu"
+    }
+  ],
+  "selected": {
+    "config_id": 5,
+    "steps": 1000,
+    "lr": 0.001,
+    "blocks": [
+      3,
+      3,
+      3
+    ],
+    "patience": -1,
+    "val_check": 100,
+    "loss": "quantile",
+    "train_wql": 0.003687576199907874,
+    "seconds": 262.1,
+    "device": "cpu"
+  },
+  "n_windows": 1794,
+  "seconds": 901.5,
+  "grid_seconds_total": 897.4,
+  "peak_rss_mb": 1270.0,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/heartrate__nbeats-seed0.npz"
+}

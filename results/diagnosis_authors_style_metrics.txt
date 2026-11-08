@@ -1,0 +1,33 @@
+              dataset              model  pce_authors_style  cce_authors_style  siw_authors_style  mase_authors_style  naive_mae_global
+                crime         arima-ctxT             0.0233            -0.0409             0.3850              0.8890           30.2916
+                crime      arima-guarded             0.0646            -0.1403             0.6730              0.9737           30.2916
+                crime              arima             0.0646            -0.1403             0.6730              0.9737           30.2916
+                crime  chronos-bolt-base             0.0345            -0.0112             0.2528              0.7440           30.2916
+                crime chronos-bolt-small             0.0243            -0.0063             0.2497              0.7413           30.2916
+                crime     nbeats-holdout             0.0572             0.1228             0.1870              0.7961           30.2916
+                crime             nbeats             0.1994             0.4430             0.0287              0.9077           30.2916
+                crime   timesfm-2.5-200m             0.0260            -0.0161             0.2500              0.7210           30.2916
+                crime              tirex             0.0229            -0.0485             0.2765              0.7254           30.2916
+    crime_authorsdata         arima-ctxT             0.0271            -0.0602             0.3711              0.8331           30.3248
+    crime_authorsdata              arima             0.0647            -0.1440             0.6588              0.9079           30.3248
+    crime_authorsdata chronos-bolt-small             0.0131            -0.0229             0.2737              0.7445           30.3248
+    crime_authorsdata   timesfm-2.5-200m             0.0185            -0.0140             0.2611              0.7322           30.3248
+              glucose         arima-ctxT             0.0500            -0.1018             2.0569              7.6279            2.2681
+              glucose      arima-guarded             0.0225            -0.0186             1.3708              7.6749            2.2681
+              glucose              arima             0.0227            -0.0216        109610.7967             50.0000            2.2681
+              glucose  chronos-bolt-base             0.0169            -0.0160             0.9758              6.5282            2.2681
+              glucose chronos-bolt-small             0.0164            -0.0284             1.0240              6.6033            2.2681
+              glucose   timesfm-2.5-200m             0.0137            -0.0291             0.8786              6.1218            2.2681
+            heartrate         arima-ctxT             0.0499            -0.0997             0.9157              1.3012            2.4900
+            heartrate      arima-guarded             0.0636            -0.1308             1.2302              1.5422            2.4900
+            heartrate              arima             0.0636            -0.1308             1.2302              1.5422            2.4900
+            heartrate  chronos-bolt-base             0.0499            -0.0704             0.7459              1.2557            2.4900
+            heartrate chronos-bolt-small             0.0478            -0.0599             0.7262              1.2586            2.4900
+            heartrate     nbeats-holdout             0.0419             0.0164             0.5885              1.2491            2.4900
+            heartrate             nbeats             0.1979             0.4315             0.0769              1.3339            2.4900
+            heartrate   timesfm-2.5-200m             0.0152            -0.0003             0.5674              1.1761            2.4900
+            heartrate              tirex             0.0306            -0.0499             0.6582              1.1741            2.4900
+heartrate_authorsdata         arima-ctxT             0.0553            -0.1123             0.9407              1.1787            2.6987
+heartrate_authorsdata              arima             0.0589            -0.1203             1.1503              1.3713            2.6987
+heartrate_authorsdata chronos-bolt-small             0.0441            -0.0506             0.6978              1.1213            2.6987
+heartrate_authorsdata   timesfm-2.5-200m             0.0181            -0.0023             0.5802              1.0860            2.6987

@@ -1,0 +1,100 @@
+{
+  "model": "nbeats-holdout",
+  "select": "holdout",
+  "dataset": "crime",
+  "grid": [
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 1.0971419519071464
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 1.1323677002908388
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 1.641003793610603
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 1.329819713970151
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 1.4194687689840382
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 1.41959170740557
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 1.1063297474800107
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 1.0709634582643013
+    }
+  ],
+  "selected": {
+    "max_steps": 1000,
+    "lr": 0.0001,
+    "n_blocks": [
+      3,
+      3,
+      3
+    ]
+  },
+  "n_windows": 4030,
+  "seconds": 1446.6,
+  "peak_rss_mb": 1540.9,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/crime__nbeats-holdout.npz"
+}

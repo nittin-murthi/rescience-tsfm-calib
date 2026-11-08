@@ -1,0 +1,15 @@
+{
+  "model": "chronos-bolt-small",
+  "hf_id": "amazon/chronos-bolt-small",
+  "dataset": "patents",
+  "n_windows": 5727,
+  "seconds": 1.0,
+  "windows_this_session": 5727,
+  "crossing_frac": 0.0,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 5.35e-07 on 16 windows)",
+  "threads": 8,
+  "batch": 256,
+  "peak_rss_mb": 639.6,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/patents__chronos-bolt-small.npz"
+}

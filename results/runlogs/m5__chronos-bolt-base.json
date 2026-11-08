@@ -1,0 +1,15 @@
+{
+  "model": "chronos-bolt-base",
+  "hf_id": "amazon/chronos-bolt-base",
+  "dataset": "m5",
+  "n_windows": 21280,
+  "seconds": 19.9,
+  "windows_this_session": 21280,
+  "crossing_frac": 0.0,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 1.51e-06 on 16 windows)",
+  "threads": 8,
+  "batch": 256,
+  "peak_rss_mb": 1399.5,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/m5__chronos-bolt-base.npz"
+}

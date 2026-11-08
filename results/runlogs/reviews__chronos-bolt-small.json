@@ -1,0 +1,15 @@
+{
+  "model": "chronos-bolt-small",
+  "hf_id": "amazon/chronos-bolt-small",
+  "dataset": "reviews",
+  "n_windows": 358610,
+  "seconds": 90.9,
+  "windows_this_session": 358610,
+  "crossing_frac": 0.0003007924695351496,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 1.49e-06 on 16 windows)",
+  "threads": 8,
+  "batch": 256,
+  "peak_rss_mb": 5586.1,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/reviews__chronos-bolt-small.npz"
+}

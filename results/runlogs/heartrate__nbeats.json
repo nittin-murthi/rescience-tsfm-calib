@@ -1,0 +1,99 @@
+{
+  "model": "nbeats",
+  "dataset": "heartrate",
+  "grid": [
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.11039899990664596
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.061504076642153176
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.2980372636011108
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.2444720490937941
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.004850772603357811
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.003240648303519952
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.04869133389865693
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.02577076607084555
+    }
+  ],
+  "selected": {
+    "max_steps": 1000,
+    "lr": 0.001,
+    "n_blocks": [
+      3,
+      3,
+      3
+    ]
+  },
+  "n_windows": 1794,
+  "seconds": 1510.2,
+  "peak_rss_mb": 1261.0,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/heartrate__nbeats.npz"
+}

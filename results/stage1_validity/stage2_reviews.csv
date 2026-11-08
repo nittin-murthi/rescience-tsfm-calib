@@ -1,0 +1,26 @@
+dataset,model,check,ok,value,detail
+reviews,arima-ctxT,n_windows_full,True,358610,device=cpu (ARIMA)
+reviews,arima,n_windows_full,True,358610,device=cpu (ARIMA)
+reviews,chronos-bolt-base,n_windows_full,True,358610,device=mps
+reviews,chronos-bolt-base,hf_id,True,amazon/chronos-bolt-base,revision pinned in envs/MODEL_REVISIONS.md
+reviews,chronos-bolt-small,n_windows_full,True,358610,device=mps
+reviews,chronos-bolt-small,hf_id,True,amazon/chronos-bolt-small,revision pinned in envs/MODEL_REVISIONS.md
+reviews,nbeats-full-seed0,N_grid_complete,True,64,
+reviews,nbeats-full-seed0,N_selected_is_argmin,True,39,argmin train_wql = 39; device=mps
+reviews,nbeats-full-seed1,N_grid_complete,True,64,
+reviews,nbeats-full-seed1,N_selected_is_argmin,True,37,argmin train_wql = 37; device=mps
+reviews,nbeats-full-seed2,N_grid_complete,True,64,
+reviews,nbeats-full-seed2,N_selected_is_argmin,True,39,argmin train_wql = 39; device=mps
+reviews,nbeats-holdout-full-seed0,N_grid_complete,True,64,
+reviews,nbeats-holdout-full-seed0,N_selected_is_argmin,True,51,argmin train_wql = 51; device=mps
+reviews,nbeats-holdout-full-seed1,N_grid_complete,True,64,
+reviews,nbeats-holdout-full-seed1,N_selected_is_argmin,True,52,argmin train_wql = 52; device=mps
+reviews,nbeats-holdout-full-seed2,N_grid_complete,True,64,
+reviews,nbeats-holdout-full-seed2,N_selected_is_argmin,True,49,argmin train_wql = 49; device=mps
+reviews,timesfm-2.5-200m,n_windows_full,True,358610,device=cpu
+reviews,timesfm-2.5-200m,hf_id,True,google/timesfm-2.5-200m-pytorch,revision pinned in envs/MODEL_REVISIONS.md
+reviews,tirex,n_windows_full,True,358610,device=mps
+reviews,tirex,hf_id,True,NX-AI/TiRex,revision pinned in envs/MODEL_REVISIONS.md
+reviews,all,E_summary_equals_per_series_mean,True,6.2e-05,max rel diff; per-series CSV has 6 d.p.
+reviews,all,n_series,True,235,235 in the UCI deposit (Table 1: 239)
+reviews,,data_sha256_on_mac,True,True,runlogs_stage2.txt

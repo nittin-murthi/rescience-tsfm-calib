@@ -1,0 +1,45 @@
+\begin{tabular}{llcccc}
+\toprule
+Dataset & Test & max TSFM PCE & baseline PCE & series-pair wins & holds \\
+\midrule
+Reviews & C1a vs ARIMA (64) & 0.014 & 0.058 & 932/940 & yes \\
+Reviews & C1a vs ARIMA ($T$)$^\ast$ & 0.014 & 0.057 & 936/940 & yes \\
+Reviews & C1a vs N-BEATS (full, in-sample) & 0.014 & 0.066 & 939/940 & yes \\
+Reviews & C1a vs N-BEATS (full, hold-out)$^\ast$ & 0.014 & 0.046 & 880/940 & yes \\
+Reviews & C1b (max TSFM PCE $\le$ 0.06) & 0.014 & -- & -- & yes \\
+M5 & C1a vs ARIMA (64) & 0.052 & 0.049 & 156/280 & no \\
+M5 & C1a vs ARIMA ($T$)$^\ast$ & 0.052 & 0.040 & 125/280 & no \\
+M5 & C1a vs N-BEATS (full, in-sample) & 0.052 & 0.100 & 277/280 & yes \\
+M5 & C1a vs N-BEATS (full, hold-out)$^\ast$ & 0.052 & 0.060 & 192/280 & yes \\
+M5 & C1b (max TSFM PCE $\le$ 0.06) & 0.052 & -- & -- & yes \\
+Crime & C1a vs ARIMA (64) & 0.035 & 0.065 & 20/20 & yes \\
+Crime & C1a vs ARIMA ($T$)$^\ast$ & 0.035 & 0.024 & 7/20 & no \\
+Crime & C1a vs ARIMA (64, guard)$^\ast$ & 0.035 & 0.065 & 20/20 & yes \\
+Crime & C1a vs N-BEATS (full, in-sample) & 0.035 & 0.200 & 20/20 & yes \\
+Crime & C1a vs N-BEATS (full, hold-out)$^\ast$ & 0.035 & 0.034 & 17/20 & no \\
+Crime & C1a vs N-BEATS (reduced, in-s.)$^\ast$ & 0.035 & 0.199 & 20/20 & yes \\
+Crime & C1a vs N-BEATS (reduced, hold-out)$^\ast$ & 0.035 & 0.058 & 20/20 & yes \\
+Crime & C1b (max TSFM PCE $\le$ 0.06) & 0.035 & -- & -- & yes \\
+Heart-Rate & C1a vs ARIMA (64) & 0.055 & 0.066 & 20/24 & yes \\
+Heart-Rate & C1a vs ARIMA ($T$)$^\ast$ & 0.055 & 0.055 & 17/24 & no \\
+Heart-Rate & C1a vs ARIMA (64, guard)$^\ast$ & 0.055 & 0.066 & 20/24 & yes \\
+Heart-Rate & C1a vs N-BEATS (full, in-sample) & 0.055 & 0.206 & 24/24 & yes \\
+Heart-Rate & C1a vs N-BEATS (full, hold-out)$^\ast$ & 0.055 & 0.059 & 15/24 & yes \\
+Heart-Rate & C1a vs N-BEATS (reduced, in-s.)$^\ast$ & 0.055 & 0.207 & 24/24 & yes \\
+Heart-Rate & C1a vs N-BEATS (reduced, hold-out)$^\ast$ & 0.055 & 0.059 & 15/24 & yes \\
+Heart-Rate & C1b (max TSFM PCE $\le$ 0.06) & 0.055 & -- & -- & yes \\
+Glucose & C1a vs ARIMA (64) & 0.033 & 0.055 & 56/64 & yes \\
+Glucose & C1a vs ARIMA ($T$)$^\ast$ & 0.033 & 0.067 & 64/64 & yes \\
+Glucose & C1a vs ARIMA (64, guard)$^\ast$ & 0.033 & 0.055 & 56/64 & yes \\
+Glucose & C1a vs N-BEATS (full, in-sample) & 0.033 & 0.212 & 64/64 & yes \\
+Glucose & C1a vs N-BEATS (full, hold-out)$^\ast$ & 0.033 & 0.051 & 57/64 & yes \\
+Glucose & C1a vs N-BEATS (reduced, in-s.)$^\ast$ & 0.033 & 0.212 & 64/64 & yes \\
+Glucose & C1a vs N-BEATS (reduced, hold-out)$^\ast$ & 0.033 & 0.054 & 57/64 & yes \\
+Glucose & C1b (max TSFM PCE $\le$ 0.06) & 0.033 & -- & -- & yes \\
+Patents & C1a vs ARIMA (64) & 0.193 & 0.114 & 102/332 & no \\
+Patents & C1a vs ARIMA ($T$)$^\ast$ & 0.193 & 0.130 & 138/332 & no \\
+Patents & C1a vs N-BEATS (full, in-sample) & 0.193 & 0.262 & 267/332 & yes \\
+Patents & C1a vs N-BEATS (full, hold-out)$^\ast$ & 0.193 & 0.174 & 197/332 & no \\
+Patents & C1b (max TSFM PCE $\le$ 0.06) & 0.193 & -- & -- & no (not claimed) \\
+\bottomrule
+\end{tabular}

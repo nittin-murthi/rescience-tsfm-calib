@@ -1,0 +1,1263 @@
+{
+  "model": "arima-ctxT",
+  "dataset": "patents",
+  "refit_context": 128,
+  "n_windows": 5727,
+  "n_refit_failures": {
+    "css_ml_ok": 5708,
+    "ml_retry": 19,
+    "css_retry": 0,
+    "random_walk_fallback": 0
+  },
+  "guard": false,
+  "orders": {
+    "0": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "1": {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "2": {
+      "order": [
+        4,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "3": {
+      "order": [
+        5,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "4": {
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "5": {
+      "order": [
+        1,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "6": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "7": {
+      "order": [
+        5,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "8": {
+      "order": [
+        5,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "9": {
+      "order": [
+        5,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "10": {
+      "order": [
+        5,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "11": {
+      "order": [
+        4,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "12": {
+      "order": [
+        0,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "13": {
+      "order": [
+        5,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "14": {
+      "order": [
+        3,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "15": {
+      "order": [
+        4,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "16": {
+      "order": [
+        0,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "17": {
+      "order": [
+        3,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "18": {
+      "order": [
+        4,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "19": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "20": {
+      "order": [
+        5,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "21": {
+      "order": [
+        1,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "22": {
+      "order": [
+        5,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "23": {
+      "order": [
+        4,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "24": {
+      "order": [
+        1,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "25": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "26": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "27": {
+      "order": [
+        4,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "28": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "29": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "30": {
+      "order": [
+        0,
+        1,
+        5
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "31": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "32": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "33": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "34": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "35": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "36": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "37": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "38": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "39": {
+      "order": [
+        4,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "40": {
+      "order": [
+        0,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "41": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "42": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "43": {
+      "order": [
+        2,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "44": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "45": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "46": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "47": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "48": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "49": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "50": {
+      "order": [
+        4,
+        2,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "51": {
+      "order": [
+        0,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "52": {
+      "order": [
+        3,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "53": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "54": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "55": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "56": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "57": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "58": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "59": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "60": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "61": {
+      "order": [
+        4,
+        2,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "62": {
+      "order": [
+        3,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "63": {
+      "order": [
+        5,
+        2,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "64": {
+      "order": [
+        1,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "65": {
+      "order": [
+        3,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "66": {
+      "order": [
+        3,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "67": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "68": {
+      "order": [
+        1,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "69": {
+      "order": [
+        3,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "70": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "71": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "72": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "73": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "74": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "75": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "76": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "77": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "78": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "79": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "80": {
+      "order": [
+        1,
+        2,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "81": {
+      "order": [
+        3,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "82": {
+      "order": [
+        4,
+        2,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    }
+  },
+  "seconds": 8.6,
+  "peak_rss_mb": 243.9,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/patents__arima-ctxT.npz"
+}

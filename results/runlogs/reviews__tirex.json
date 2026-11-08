@@ -1,0 +1,15 @@
+{
+  "model": "tirex",
+  "hf_id": "NX-AI/TiRex",
+  "dataset": "reviews",
+  "n_windows": 358610,
+  "seconds": 8679.1,
+  "windows_this_session": 358610,
+  "crossing_frac": 4.902283295223223e-05,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 3.92e-03 on 16 windows)",
+  "threads": 8,
+  "batch": 256,
+  "peak_rss_mb": 5481.9,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/reviews__tirex.npz"
+}

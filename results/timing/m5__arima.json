@@ -1,0 +1,10 @@
+{
+  "model": "arima",
+  "dataset": "m5",
+  "trial_windows": 400,
+  "total_windows": 21280,
+  "procs": 10,
+  "order_selection_seconds": 71.2,
+  "seconds": 1.82,
+  "sec_per_window": 0.004556535482406616
+}

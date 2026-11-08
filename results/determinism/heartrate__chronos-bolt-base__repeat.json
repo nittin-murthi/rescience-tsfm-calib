@@ -1,0 +1,10 @@
+{
+  "model": "chronos-bolt-base",
+  "hf_id": "amazon/chronos-bolt-base",
+  "dataset": "heartrate",
+  "n_windows": 1794,
+  "seconds": 10.1,
+  "crossing_frac": 0.0,
+  "peak_rss_mb": 1254.1,
+  "path": "results/determinism/heartrate__chronos-bolt-base__repeat.npz"
+}

@@ -1,0 +1,10 @@
+{
+  "model": "tirex",
+  "hf_id": "NX-AI/TiRex",
+  "dataset": "crime",
+  "n_windows": 4030,
+  "seconds": 819.8,
+  "crossing_frac": 0.0,
+  "peak_rss_mb": 730.2,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/crime__tirex.npz"
+}

@@ -1,0 +1,42 @@
+% DO NOT EDIT - automatically generated from metadata.yaml
+
+\def \codeURL{https://github.com/nittin-murthi/rescience-tsfm-calib}
+\def \codeDOI{}
+\def \codeSWH{}
+\def \dataURL{}
+\def \dataDOI{}
+\def \editorNAME{}
+\def \editorORCID{}
+\def \reviewerINAME{}
+\def \reviewerIORCID{}
+\def \reviewerIINAME{}
+\def \reviewerIIORCID{}
+\def \dateRECEIVED{}
+\def \dateACCEPTED{}
+\def \datePUBLISHED{}
+\def \articleTITLE{[Re] Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated? A Partial Replication}
+\def \articleTYPE{Replication}
+\def \articleDOMAIN{Machine Learning}
+\def \articleBIBLIOGRAPHY{bibliography.bib}
+\def \articleYEAR{2026}
+\def \reviewURL{}
+\def \articleABSTRACT{We independently re-implement, from the paper text, the main calibration experiment of Adler et al. (ICLR 2026), which reports that time series foundation models (TSFMs) are better calibrated than ARIMA and N-BEATS baselines and reach probabilistic calibration error (PCE) close to or below 0.05. We test this claim on all six of the paper's real datasets (Reviews, M5, NYC Crime, Heart-Rate, Glucose, Patents) with Chronos-Bolt (small, base), TimesFM 2.5 (200M, a substitute for the paper's TimesFM 2.0), TiRex, ARIMA and N-BEATS (the paper's full grid, three seeds), using 64-step rolling-origin forecasts. All TSFMs reach PCE at or below 0.06 on the five datasets where the paper claims it; Patents, which the paper exempts, stays high. The TSFMs beat in-sample-selected N-BEATS on every dataset and seed, and our primary ARIMA on four of six datasets. On M5 the substitute TimesFM is worse than ARIMA, and on Patents all four TSFMs are. Our ARIMA is much better calibrated than the paper's on every dataset. An ARIMA refit on the TSFM context matches or beats some TSFMs on four datasets, and hold-out-selected N-BEATS beats the worst TSFM in six of eighteen runs. We therefore judge the claim partially reproduced. A post-hoc comparison with the authors' code explains our differences in MASE and in PCE aggregation, but not the ARIMA gap, because the baseline code is not released.}
+\def \replicationCITE{Coen Adler, Yuxin Chang, Felix Draxler, Samar Abdi and Padhraic Smyth. Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated? ICLR 2026. arXiv:2510.16060v2.}
+\def \replicationBIB{adler2026beyond}
+\def \replicationURL{https://arxiv.org/abs/2510.16060v2}
+\def \replicationDOI{10.48550/arXiv.2510.16060}
+\def \contactNAME{Nittin Murthi Dhekshinamoorthy}
+\def \contactEMAIL{ndhek2@illinois.edu}
+\def \articleKEYWORDS{rescience c, time series, foundation models, calibration, forecasting, python}
+\def \journalNAME{ReScience C}
+\def \journalVOLUME{}
+\def \journalISSUE{}
+\def \articleNUMBER{}
+\def \articleDOI{}
+\def \authorsFULL{Nittin Murthi Dhekshinamoorthy}
+\def \authorsABBRV{N.M. Dhekshinamoorthy}
+\def \authorsSHORT{Dhekshinamoorthy}
+\title{\articleTITLE}
+\date{}
+\author[1]{Nittin Murthi Dhekshinamoorthy}
+\affil[1]{University of Illinois Urbana-Champaign, Urbana, IL, USA}

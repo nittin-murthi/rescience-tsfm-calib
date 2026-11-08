@@ -1,0 +1,100 @@
+{
+  "model": "nbeats-holdout",
+  "select": "holdout",
+  "dataset": "heartrate",
+  "grid": [
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.5423662266281316
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.5368459327048098
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.423480453662507
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.4335491523471638
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.5796003954798471
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.5391255476124946
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.5955822025507566
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.5438525493665708
+    }
+  ],
+  "selected": {
+    "max_steps": 100,
+    "lr": 0.0001,
+    "n_blocks": [
+      1,
+      1,
+      1
+    ]
+  },
+  "n_windows": 1794,
+  "seconds": 707.9,
+  "peak_rss_mb": 1144.7,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/heartrate__nbeats-holdout.npz"
+}

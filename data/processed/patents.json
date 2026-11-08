@@ -1,0 +1,12 @@
+{
+  "name": "patents",
+  "split": 276,
+  "freq": "MS",
+  "n_series": 83,
+  "steps_per_series": 408,
+  "n_forecasts": 5727,
+  "L": 64,
+  "T": 128,
+  "season": 1,
+  "stride": 1
+}

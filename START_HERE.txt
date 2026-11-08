@@ -1,0 +1,32 @@
+6-dataset extension: two stages (ReScience replication of Adler et al., arXiv:2510.16060v2)
+===========================================================================================
+This package adds Patents, M5 and Reviews to the three datasets that are already done. It runs the same models:
+4 TSFMs (Chronos-Bolt small/base, TimesFM-2.5, TiRex), ARIMA (W=64 primary and W=T), and the full-grid N-BEATS
+(in-sample and hold-out selection, 3 seeds each).
+
+1. Unzip rescience-tsfm-calib-6ds.zip. It creates the folder rescience-tsfm-calib/.
+2. Open a terminal and run:  cd rescience-tsfm-calib
+3. Stage 1 (Patents + M5):   bash run_stage1.sh
+   When it prints FULL_STAGE1_DONE, send back ../RETURN_STAGE1.zip (written next to the folder).
+4. Stage 2 (Reviews):        bash run_stage2.sh
+   When it prints FULL_STAGE2_DONE, send back ../RETURN_STAGE2.zip. Large forecast files go into a separate
+   RETURN_STAGE2_forecasts.zip; that file is optional to send, because the metrics are already in the main zip.
+
+What each command does:
+ - Sets up Python 3.12/3.11 venvs (.venv-stats, -chronos, -timesfm, -tirex, -nbeats). The first run needs
+   internet: about 3 GB of pip packages plus about 2 GB of model weights at pinned revisions.
+ - Checks the data checksums and detects the device (Apple MPS, CUDA or CPU). Each TSFM is compared against the
+   CPU on its first windows. If the GPU run errors or differs (relative error > 1e-2), that model falls back to the
+   CPU, and the reason is logged in results/runlogs/gpu_env_stageN.txt.
+ - Runs a short timing trial and prints an ETA (also saved in results/eta_stageN.txt). It then runs everything in
+   the foreground. The Mac is kept awake with caffeinate.
+ - Evaluates into results/stageN/ and packs RETURN_STAGEN.zip.
+
+Interruption-safe: if it stops (Ctrl-C, sleep, reboot), run the same command again. Finished models are skipped,
+and TSFM/ARIMA chunks and N-BEATS grid configs resume where they stopped. INCOMPLETE means: run it again.
+Quick test (about 10-20 min, mostly installs): SMOKE=1 bash run_stage1.sh. It uses 1 series and 1 N-BEATS config
+in a throw-away copy and never touches real results.
+Options: DEVICE=cpu|mps|cuda  TSFM_THREADS=n  ARIMA_PROCS=n  FC_FLOAT16=1 (smaller forecast files, used only when
+lossless for coverage). Details: STAGES.md. Logs: results/runlogs_stage1.txt, results/runlogs_stage2.txt.
+
+(The earlier N-BEATS-only package, run_gpu.sh / RUN_ON_GPU.md, is finished and is kept for the record.)

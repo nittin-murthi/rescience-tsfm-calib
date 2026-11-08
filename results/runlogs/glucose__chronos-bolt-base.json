@@ -1,0 +1,10 @@
+{
+  "model": "chronos-bolt-base",
+  "hf_id": "amazon/chronos-bolt-base",
+  "dataset": "glucose",
+  "n_windows": 13040,
+  "seconds": 471.1,
+  "crossing_frac": 6.290740030674847e-06,
+  "peak_rss_mb": 1536.3,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/glucose__chronos-bolt-base.npz"
+}

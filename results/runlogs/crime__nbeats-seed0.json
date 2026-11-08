@@ -1,0 +1,159 @@
+{
+  "model": "nbeats-seed0",
+  "select": "insample",
+  "grid_name": "reduced",
+  "seed": 0,
+  "device": "cpu",
+  "dataset": "crime",
+  "grid": [
+    {
+      "config_id": 0,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.6110187533175931,
+      "seconds": 20.5,
+      "device": "cpu"
+    },
+    {
+      "config_id": 1,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.5971273975595659,
+      "seconds": 37.1,
+      "device": "cpu"
+    },
+    {
+      "config_id": 2,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.8129182105240641,
+      "seconds": 12.5,
+      "device": "cpu"
+    },
+    {
+      "config_id": 3,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.6865285843995721,
+      "seconds": 38.2,
+      "device": "cpu"
+    },
+    {
+      "config_id": 4,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.23417421896986781,
+      "seconds": 141.6,
+      "device": "cpu"
+    },
+    {
+      "config_id": 5,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.05723260489158333,
+      "seconds": 315.3,
+      "device": "cpu"
+    },
+    {
+      "config_id": 6,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.5466970073651372,
+      "seconds": 182.0,
+      "device": "cpu"
+    },
+    {
+      "config_id": 7,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 0.45020670199608415,
+      "seconds": 227.2,
+      "device": "cpu"
+    }
+  ],
+  "selected": {
+    "config_id": 5,
+    "steps": 1000,
+    "lr": 0.001,
+    "blocks": [
+      3,
+      3,
+      3
+    ],
+    "patience": -1,
+    "val_check": 100,
+    "loss": "quantile",
+    "train_wql": 0.05723260489158333,
+    "seconds": 315.3,
+    "device": "cpu"
+  },
+  "n_windows": 4030,
+  "seconds": 977.0,
+  "grid_seconds_total": 974.4,
+  "peak_rss_mb": 1338.3,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/crime__nbeats-seed0.npz"
+}

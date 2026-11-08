@@ -1,0 +1,12 @@
+{
+  "name": "crime",
+  "split": 3287,
+  "freq": "D",
+  "n_series": 5,
+  "steps_per_series": 6574,
+  "n_forecasts": 4030,
+  "L": 64,
+  "T": 512,
+  "season": 7,
+  "stride": 4
+}

@@ -1,0 +1,8 @@
+{"config_id": 0, "steps": 100, "lr": 0.001, "blocks": [1, 1, 1], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.561521925513332, "seconds": 9.0, "device": "cpu"}
+{"config_id": 1, "steps": 100, "lr": 0.001, "blocks": [3, 3, 3], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.5636870451463301, "seconds": 18.0, "device": "cpu"}
+{"config_id": 2, "steps": 100, "lr": 0.0001, "blocks": [1, 1, 1], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.4088180323550065, "seconds": 7.1, "device": "cpu"}
+{"config_id": 3, "steps": 100, "lr": 0.0001, "blocks": [3, 3, 3], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.42487483735449344, "seconds": 17.8, "device": "cpu"}
+{"config_id": 4, "steps": 1000, "lr": 0.001, "blocks": [1, 1, 1], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.5898171412559431, "seconds": 67.6, "device": "cpu"}
+{"config_id": 5, "steps": 1000, "lr": 0.001, "blocks": [3, 3, 3], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.564452549536595, "seconds": 196.6, "device": "cpu"}
+{"config_id": 6, "steps": 1000, "lr": 0.0001, "blocks": [1, 1, 1], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.5823373940527344, "seconds": 64.0, "device": "cpu"}
+{"config_id": 7, "steps": 1000, "lr": 0.0001, "blocks": [3, 3, 3], "patience": -1, "val_check": 100, "loss": "quantile", "train_wql": 0.5342999979028037, "seconds": 176.3, "device": "cpu"}

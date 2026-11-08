@@ -1,0 +1,10 @@
+{
+  "model": "arima-ctxT",
+  "dataset": "m5",
+  "trial_windows": 400,
+  "total_windows": 21280,
+  "procs": 10,
+  "order_selection_seconds": 0.0,
+  "seconds": 8.36,
+  "sec_per_window": 0.020912297368049622
+}

@@ -1,0 +1,10 @@
+{
+  "model": "tirex",
+  "hf_id": "NX-AI/TiRex",
+  "dataset": "heartrate",
+  "n_windows": 1794,
+  "seconds": 326.8,
+  "crossing_frac": 4.35479375696767e-06,
+  "peak_rss_mb": 703.8,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/heartrate__tirex.npz"
+}

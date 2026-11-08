@@ -1,0 +1,11 @@
+# Round 5 (6-dataset package, any machine). Top-level pins = the box versions (envs/requirements-*.txt) minus the +cpu
+# torch build; transitive packages are left to pip. macOS: the default torch wheel includes MPS.
+torch==2.5.1
+chronos-forecasting==2.3.2
+transformers==4.57.6
+accelerate==1.15.0
+huggingface-hub==0.36.2
+safetensors==0.8.0
+einops==0.8.2
+numpy==2.4.6
+pandas==3.1.0

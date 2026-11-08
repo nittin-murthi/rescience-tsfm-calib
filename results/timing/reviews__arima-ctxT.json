@@ -1,0 +1,10 @@
+{
+  "model": "arima-ctxT",
+  "dataset": "reviews",
+  "trial_windows": 400,
+  "total_windows": 358610,
+  "procs": 10,
+  "order_selection_seconds": 0.1,
+  "seconds": 36.96,
+  "sec_per_window": 0.09240909099578858
+}

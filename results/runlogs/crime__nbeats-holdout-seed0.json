@@ -1,0 +1,159 @@
+{
+  "model": "nbeats-holdout-seed0",
+  "select": "holdout",
+  "grid_name": "reduced",
+  "seed": 0,
+  "device": "cpu",
+  "dataset": "crime",
+  "grid": [
+    {
+      "config_id": 0,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.115824834367658,
+      "seconds": 17.3,
+      "device": "cpu"
+    },
+    {
+      "config_id": 1,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1874971870757862,
+      "seconds": 34.0,
+      "device": "cpu"
+    },
+    {
+      "config_id": 2,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.5978923159529308,
+      "seconds": 14.3,
+      "device": "cpu"
+    },
+    {
+      "config_id": 3,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1878398307880276,
+      "seconds": 38.1,
+      "device": "cpu"
+    },
+    {
+      "config_id": 4,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.5365723474419055,
+      "seconds": 135.7,
+      "device": "cpu"
+    },
+    {
+      "config_id": 5,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.4814036047733015,
+      "seconds": 313.8,
+      "device": "cpu"
+    },
+    {
+      "config_id": 6,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.2696040020900627,
+      "seconds": 196.3,
+      "device": "cpu"
+    },
+    {
+      "config_id": 7,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1598293775142854,
+      "seconds": 225.9,
+      "device": "cpu"
+    }
+  ],
+  "selected": {
+    "config_id": 0,
+    "steps": 100,
+    "lr": 0.001,
+    "blocks": [
+      1,
+      1,
+      1
+    ],
+    "patience": -1,
+    "val_check": 100,
+    "loss": "quantile",
+    "train_wql": 1.115824834367658,
+    "seconds": 17.3,
+    "device": "cpu"
+  },
+  "n_windows": 4030,
+  "seconds": 988.1,
+  "grid_seconds_total": 975.4,
+  "peak_rss_mb": 1357.8,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/crime__nbeats-holdout-seed0.npz"
+}

@@ -1,0 +1,49 @@
+date: Mon Oct 26 15:21:45 PDT 2026
+os: Darwin <hostname> 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:18:48 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6020 arm64
+requested device: auto -> detected: mps
+cpus: 12  performance cores: 8  TSFM_THREADS=8 ARIMA_PROCS=10 NBEATS_THREADS=4 TSFM_BATCH=256 FC_FLOAT16=0
+Apple M2 Max
+memory bytes: 34359738368
+nvidia-smi: not available
+--- .venv-stats
+python 3.12.11
+--- .venv-chronos
+python 3.12.11
+torch 2.5.1 cuda_available False mps_available True
+--- .venv-timesfm
+python 3.12.11
+torch 2.5.1 cuda_available False mps_available True
+--- .venv-tirex
+python 3.12.11
+torch 2.5.1 cuda_available False mps_available True
+--- .venv-nbeats
+python 3.12.11
+torch 2.5.1 cuda_available False mps_available True
+  device decisions:    3   "device_note": "fallback: mps failed (TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 1.06e-06 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 1.19e-06 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 1.48e-03 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 1.49e-06 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 1.51e-06 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 1.76e-06 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 2.60e-03 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 3.92e-03 on 16 windows)",
+  device decisions:    1   "device_note": "mps ok (rel err vs cpu 5.35e-07 on 16 windows)",
+  trial m5 arima-ctxT cpu 
+  trial m5 arima cpu 
+  trial m5 chronos-bolt-base mps mps ok (rel err vs cpu 1.51e-06 on 16 windows)
+  trial m5 chronos-bolt-small mps mps ok (rel err vs cpu 1.19e-06 on 16 windows)
+  trial m5 timesfm-2.5-200m cpu fallback: mps failed (TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.)
+  trial m5 tirex mps mps ok (rel err vs cpu 2.60e-03 on 16 windows)
+  trial patents arima-ctxT cpu 
+  trial patents arima cpu 
+  trial patents chronos-bolt-base mps mps ok (rel err vs cpu 1.06e-06 on 16 windows)
+  trial patents chronos-bolt-small mps mps ok (rel err vs cpu 5.35e-07 on 16 windows)
+  trial patents timesfm-2.5-200m cpu fallback: mps failed (TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.)
+  trial patents tirex mps mps ok (rel err vs cpu 1.48e-03 on 16 windows)
+  trial reviews arima-ctxT cpu 
+  trial reviews arima cpu 
+  trial reviews chronos-bolt-base mps mps ok (rel err vs cpu 1.76e-06 on 16 windows)
+  trial reviews chronos-bolt-small mps mps ok (rel err vs cpu 1.49e-06 on 16 windows)
+  trial reviews timesfm-2.5-200m cpu fallback: mps failed (TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.)
+  trial reviews tirex mps mps ok (rel err vs cpu 3.92e-03 on 16 windows)

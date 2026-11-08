@@ -1,0 +1,93 @@
+{
+  "model": "arima-ctx128",
+  "dataset": "crime",
+  "refit_context": 128,
+  "n_windows": 4030,
+  "n_refit_failures": {
+    "css_ml_ok": 3812,
+    "ml_retry": 218,
+    "css_retry": 0,
+    "random_walk_fallback": 0
+  },
+  "guard": false,
+  "orders": {
+    "BRONX": {
+      "order": [
+        3,
+        0,
+        4
+      ],
+      "seasonal_order": [
+        1,
+        1,
+        1
+      ],
+      "season": 7,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "BROOKLYN": {
+      "order": [
+        5,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        2
+      ],
+      "season": 7,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "MANHATTAN": {
+      "order": [
+        5,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        2
+      ],
+      "season": 7,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "QUEENS": {
+      "order": [
+        5,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        2
+      ],
+      "season": 7,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "STATEN ISLAND": {
+      "order": [
+        1,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        2
+      ],
+      "season": 7,
+      "include_mean": false,
+      "include_drift": false
+    }
+  },
+  "seconds": 145.1,
+  "peak_rss_mb": 275.1,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/crime__arima-ctx128.npz"
+}

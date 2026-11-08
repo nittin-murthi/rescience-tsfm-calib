@@ -1,0 +1,10 @@
+{
+  "model": "tirex",
+  "hf_id": "NX-AI/TiRex",
+  "dataset": "glucose",
+  "n_windows": 13040,
+  "seconds": 4213.6,
+  "crossing_frac": 4.1638707822085886e-05,
+  "peak_rss_mb": 755.3,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/glucose__tirex.npz"
+}

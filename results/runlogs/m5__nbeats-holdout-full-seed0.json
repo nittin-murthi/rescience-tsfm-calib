@@ -1,0 +1,1120 @@
+{
+  "model": "nbeats-holdout-full-seed0",
+  "select": "holdout",
+  "grid_name": "full",
+  "seed": 0,
+  "device": "mps",
+  "dataset": "m5",
+  "grid": [
+    {
+      "config_id": 0,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.1577321508224037,
+      "seconds": 5.0,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 1,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0408144451104075,
+      "seconds": 2.2,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 2,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.1953508980433847,
+      "seconds": 2.2,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 3,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0398847513845544,
+      "seconds": 2.0,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 4,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.1592982308345339,
+      "seconds": 3.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 5,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0389881915743773,
+      "seconds": 3.8,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 6,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.2222886983884886,
+      "seconds": 3.8,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 7,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0700201114859569,
+      "seconds": 3.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 8,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.2096405949410483,
+      "seconds": 2.6,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 9,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0464640950538897,
+      "seconds": 2.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 10,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.167368703285607,
+      "seconds": 2.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 11,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0524581806607258,
+      "seconds": 2.2,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 12,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.1590336638759158,
+      "seconds": 4.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 13,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0657995444052295,
+      "seconds": 4.0,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 14,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.204659262601589,
+      "seconds": 3.9,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 15,
+      "steps": 100,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0373614308703496,
+      "seconds": 3.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 16,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.5786416012226934,
+      "seconds": 2.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 17,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.2609630341915719,
+      "seconds": 2.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 18,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.6087885071042034,
+      "seconds": 2.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 19,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.2659970496392057,
+      "seconds": 2.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 20,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.4308786616059794,
+      "seconds": 3.9,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 21,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.1727177815005123,
+      "seconds": 3.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 22,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.43677478663423,
+      "seconds": 3.8,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 23,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.174832416527192,
+      "seconds": 3.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 24,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.805432804863706,
+      "seconds": 1.2,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 25,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.2657301812343689,
+      "seconds": 2.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 26,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.566422458055757,
+      "seconds": 2.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 27,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.263958070955989,
+      "seconds": 2.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 28,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.3817359655839374,
+      "seconds": 4.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 29,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.1751281998468668,
+      "seconds": 4.0,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 30,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.3960978915652507,
+      "seconds": 3.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 31,
+      "steps": 100,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.165982238471048,
+      "seconds": 3.6,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 32,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.1251781335951099,
+      "seconds": 21.5,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 33,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.1689863525267017,
+      "seconds": 19.8,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 34,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.0899327857421728,
+      "seconds": 21.6,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 35,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1397453845972436,
+      "seconds": 19.5,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 36,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.096955295313454,
+      "seconds": 36.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 37,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.1578440523301627,
+      "seconds": 35.0,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 38,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.1021552760454758,
+      "seconds": 34.6,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 39,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1599916180415932,
+      "seconds": 34.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 40,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.2644316555338326,
+      "seconds": 1.6,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 41,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0802898313625224,
+      "seconds": 1.2,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 42,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.089457684485378,
+      "seconds": 6.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 43,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0988052290285952,
+      "seconds": 11.5,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 44,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.2386011219863404,
+      "seconds": 3.8,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 45,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0466297396374882,
+      "seconds": 2.9,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 46,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.1014084229570376,
+      "seconds": 18.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 47,
+      "steps": 1000,
+      "lr": 0.001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0713284256629436,
+      "seconds": 14.2,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 48,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.0628768497873522,
+      "seconds": 21.9,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 49,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0339219222716096,
+      "seconds": 19.6,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 50,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.0718481640169732,
+      "seconds": 21.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 51,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.028095599498794,
+      "seconds": 19.4,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 52,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.1138167029232078,
+      "seconds": 36.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 53,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0710863784721825,
+      "seconds": 35.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 54,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.1134246680194482,
+      "seconds": 35.9,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 55,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": -1,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0932784193528433,
+      "seconds": 35.2,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 56,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.4249676793149828,
+      "seconds": 3.0,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 57,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.1000201200377544,
+      "seconds": 2.7,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 58,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.0833618009746846,
+      "seconds": 17.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 59,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.0496959333739255,
+      "seconds": 15.3,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 60,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "normal",
+      "train_wql": 1.1254324482639888,
+      "seconds": 7.8,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 61,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 10,
+      "loss": "quantile",
+      "train_wql": 1.0588543872702127,
+      "seconds": 5.4,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 62,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "normal",
+      "train_wql": 1.1117954763921407,
+      "seconds": 29.1,
+      "device": "mps",
+      "error": null
+    },
+    {
+      "config_id": 63,
+      "steps": 1000,
+      "lr": 0.0001,
+      "patience": 2,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1238877515737578,
+      "seconds": 35.4,
+      "device": "mps",
+      "error": null
+    }
+  ],
+  "selected": {
+    "config_id": 51,
+    "steps": 1000,
+    "lr": 0.0001,
+    "patience": -1,
+    "blocks": [
+      1,
+      1,
+      1
+    ],
+    "val_check": 100,
+    "loss": "quantile",
+    "train_wql": 1.028095599498794,
+    "seconds": 19.4,
+    "device": "mps",
+    "error": null
+  },
+  "n_windows": 21280,
+  "seconds": 750.7,
+  "grid_seconds_total": 722.6,
+  "peak_rss_mb": 2896.1,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/m5__nbeats-holdout-full-seed0.npz"
+}

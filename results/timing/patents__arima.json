@@ -1,0 +1,10 @@
+{
+  "model": "arima",
+  "dataset": "patents",
+  "trial_windows": 400,
+  "total_windows": 5727,
+  "procs": 10,
+  "order_selection_seconds": 8.3,
+  "seconds": 0.71,
+  "sec_per_window": 0.001774897575378418
+}

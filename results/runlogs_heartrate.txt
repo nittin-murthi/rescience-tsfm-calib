@@ -1,0 +1,16 @@
+{'model': 'arima', 'dataset': 'heartrate', 'refit_context': 64, 'n_windows': 1794, 'n_refit_failures': {'css_ml_ok': 1617, 'ml_retry': 177, 'css_retry': 0, 'random_walk_fallback': 0}, 'seconds': 15.6, 'peak_rss_mb': 235.5, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__arima.npz'}
+{'model': 'arima-ctxT', 'dataset': 'heartrate', 'refit_context': 128, 'n_windows': 1794, 'n_refit_failures': {'css_ml_ok': 1732, 'ml_retry': 62, 'css_retry': 0, 'random_walk_fallback': 0}, 'seconds': 15.1, 'peak_rss_mb': 235.4, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__arima-ctxT.npz'}
+{'model': 'chronos-bolt-small', 'hf_id': 'amazon/chronos-bolt-small', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 2.7, 'crossing_frac': 0.0, 'peak_rss_mb': 607.6, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__chronos-bolt-small.npz'}
+{'model': 'chronos-bolt-base', 'hf_id': 'amazon/chronos-bolt-base', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 7.8, 'crossing_frac': 0.0, 'peak_rss_mb': 1260.9, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__chronos-bolt-base.npz'}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'model': 'timesfm-2.5-200m', 'hf_id': 'google/timesfm-2.5-200m-pytorch', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 14.6, 'crossing_frac': 0.0, 'peak_rss_mb': 2070.5, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__timesfm-2.5-200m.npz'}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'model': 'tirex', 'hf_id': 'NX-AI/TiRex', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 326.8, 'crossing_frac': 4.35479375696767e-06, 'peak_rss_mb': 703.8, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__tirex.npz'}
+  dataset              model  n_series  n_windows    pce  pce_sem  pce_per_window     cce    siw   mase    wql
+heartrate              arima         6       1794 0.0658   0.0121          0.1695 -0.1308 2.2529 1.8420 0.4365
+heartrate         arima-ctxT         6       1794 0.0547   0.0116          0.1562 -0.0997 1.6748 1.5915 0.3509
+heartrate  chronos-bolt-base         6       1794 0.0553   0.0078          0.1389 -0.0704 1.3602 1.5494 0.3137
+heartrate chronos-bolt-small         6       1794 0.0526   0.0091          0.1379 -0.0599 1.3218 1.5486 0.3136
+heartrate   timesfm-2.5-200m         6       1794 0.0356   0.0049          0.1350 -0.0003 1.0170 1.4654 0.2906
+heartrate              tirex         6       1794 0.0426   0.0077          0.1315 -0.0499 1.1864 1.4615 0.2936
+EXIT 0
