@@ -1,0 +1,12 @@
+{
+  "name": "m5",
+  "split": 1545,
+  "freq": "D",
+  "n_series": 70,
+  "steps_per_series": 1912,
+  "n_forecasts": 21280,
+  "L": 64,
+  "T": 512,
+  "season": 7,
+  "stride": 1
+}

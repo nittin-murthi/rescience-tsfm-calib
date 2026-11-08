@@ -1,0 +1,15 @@
+{
+  "model": "timesfm-2.5-200m",
+  "hf_id": "google/timesfm-2.5-200m-pytorch",
+  "dataset": "m5",
+  "n_windows": 21280,
+  "seconds": 200.2,
+  "windows_this_session": 21280,
+  "crossing_frac": 0.0,
+  "device": "cpu",
+  "device_note": "fallback: mps failed (TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.)",
+  "threads": 8,
+  "batch": 256,
+  "peak_rss_mb": 2100.0,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/m5__timesfm-2.5-200m.npz"
+}

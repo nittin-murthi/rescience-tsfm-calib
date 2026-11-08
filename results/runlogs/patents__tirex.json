@@ -1,0 +1,15 @@
+{
+  "model": "tirex",
+  "hf_id": "NX-AI/TiRex",
+  "dataset": "patents",
+  "n_windows": 5727,
+  "seconds": 139.4,
+  "windows_this_session": 5727,
+  "crossing_frac": 7.877979308538502e-05,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 1.48e-03 on 16 windows)",
+  "threads": 8,
+  "batch": 256,
+  "peak_rss_mb": 766.1,
+  "path": "/Users/<user>/Documents/VS_Code/rescience-tsfm-calib/results/forecasts/patents__tirex.npz"
+}

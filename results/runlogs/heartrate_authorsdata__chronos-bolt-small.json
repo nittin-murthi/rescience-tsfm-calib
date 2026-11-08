@@ -1,0 +1,10 @@
+{
+  "model": "chronos-bolt-small",
+  "hf_id": "amazon/chronos-bolt-small",
+  "dataset": "heartrate_authorsdata",
+  "n_windows": 1416,
+  "seconds": 9.5,
+  "crossing_frac": 0.0,
+  "peak_rss_mb": 603.1,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/heartrate_authorsdata__chronos-bolt-small.npz"
+}

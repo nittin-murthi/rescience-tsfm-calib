@@ -1,0 +1,12 @@
+{
+  "name": "reviews",
+  "split": 735,
+  "freq": "h",
+  "n_series": 235,
+  "steps_per_series": 13000,
+  "n_forecasts": 358610,
+  "L": 64,
+  "T": 512,
+  "season": 24,
+  "stride": 8
+}

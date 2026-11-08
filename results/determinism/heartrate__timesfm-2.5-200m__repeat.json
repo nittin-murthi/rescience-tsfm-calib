@@ -1,0 +1,10 @@
+{
+  "model": "timesfm-2.5-200m",
+  "hf_id": "google/timesfm-2.5-200m-pytorch",
+  "dataset": "heartrate",
+  "n_windows": 1794,
+  "seconds": 16.2,
+  "crossing_frac": 0.0,
+  "peak_rss_mb": 2063.1,
+  "path": "results/determinism/heartrate__timesfm-2.5-200m__repeat.npz"
+}

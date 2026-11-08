@@ -1,0 +1,360 @@
+START heartrate nbeats-seed0 Sat Oct 24 14:52:09 PDT 2026
+tag=nbeats-seed0 device=cpu configs=8 resumed=0
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 0, 'steps': 100, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.11325935793640672, 'seconds': 10.8, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 1, 'steps': 100, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.06798443416827557, 'seconds': 22.5, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 2, 'steps': 100, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.2943893746432999, 'seconds': 8.8, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 3, 'steps': 100, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.24810979577634745, 'seconds': 24.1, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 4, 'steps': 1000, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.0051532976241891165, 'seconds': 231.1, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.003687576199907874, 'seconds': 262.1, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 6, 'steps': 1000, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.04832576868652721, 'seconds': 100.2, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 7, 'steps': 1000, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.025426410951082716, 'seconds': 237.8, 'device': 'cpu'}
+{'model': 'nbeats-seed0', 'select': 'insample', 'grid_name': 'reduced', 'seed': 0, 'device': 'cpu', 'dataset': 'heartrate', 'selected': {'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.003687576199907874, 'seconds': 262.1, 'device': 'cpu'}, 'n_windows': 1794, 'seconds': 901.5, 'grid_seconds_total': 897.4, 'peak_rss_mb': 1270.0, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__nbeats-seed0.npz'}
+END heartrate nbeats-seed0 rc=0 Sat Oct 24 15:07:14 PDT 2026
+START crime nbeats-seed0 Sat Oct 24 15:07:14 PDT 2026
+tag=nbeats-seed0 device=cpu configs=8 resumed=0
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 0, 'steps': 100, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.6110187533175931, 'seconds': 20.5, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 1, 'steps': 100, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.5971273975595659, 'seconds': 37.1, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 2, 'steps': 100, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.8129182105240641, 'seconds': 12.5, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 3, 'steps': 100, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.6865285843995721, 'seconds': 38.2, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 4, 'steps': 1000, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.23417421896986781, 'seconds': 141.6, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.05723260489158333, 'seconds': 315.3, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 6, 'steps': 1000, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.5466970073651372, 'seconds': 182.0, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 7, 'steps': 1000, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.45020670199608415, 'seconds': 227.2, 'device': 'cpu'}
+{'model': 'nbeats-seed0', 'select': 'insample', 'grid_name': 'reduced', 'seed': 0, 'device': 'cpu', 'dataset': 'crime', 'selected': {'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.05723260489158333, 'seconds': 315.3, 'device': 'cpu'}, 'n_windows': 4030, 'seconds': 977.0, 'grid_seconds_total': 974.4, 'peak_rss_mb': 1338.3, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/crime__nbeats-seed0.npz'}
+END crime nbeats-seed0 rc=0 Sat Oct 24 15:23:34 PDT 2026
+START glucose nbeats-seed0 Sat Oct 24 15:23:34 PDT 2026
+tag=nbeats-seed0 device=cpu configs=8 resumed=0
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 0, 'steps': 100, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.2436875719101047, 'seconds': 10.6, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 1, 'steps': 100, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.1795625005060227, 'seconds': 23.7, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 2, 'steps': 100, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.6449605312793107, 'seconds': 7.9, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 3, 'steps': 100, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.5453564753356931, 'seconds': 21.5, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 4, 'steps': 1000, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.026454112548661722, 'seconds': 86.3, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.01935447046924798, 'seconds': 527.2, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 6, 'steps': 1000, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.09939042504651201, 'seconds': 80.2, 'device': 'cpu'}
+Seed set to 0
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 7, 'steps': 1000, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.05923442475784331, 'seconds': 254.0, 'device': 'cpu'}
+{'model': 'nbeats-seed0', 'select': 'insample', 'grid_name': 'reduced', 'seed': 0, 'device': 'cpu', 'dataset': 'glucose', 'selected': {'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.01935447046924798, 'seconds': 527.2, 'device': 'cpu'}, 'n_windows': 13040, 'seconds': 1020.6, 'grid_seconds_total': 1011.4, 'peak_rss_mb': 1314.0, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/glucose__nbeats-seed0.npz'}
+END glucose nbeats-seed0 rc=0 Sat Oct 24 15:40:37 PDT 2026
+START heartrate nbeats-seed2 Sat Oct 24 15:40:37 PDT 2026
+tag=nbeats-seed2 device=cpu configs=8 resumed=0
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 0, 'steps': 100, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.1062455230895178, 'seconds': 9.4, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 1, 'steps': 100, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.06602935772127831, 'seconds': 18.5, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 2, 'steps': 100, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.29794075651433233, 'seconds': 7.6, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 3, 'steps': 100, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.2461140090697291, 'seconds': 17.9, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 4, 'steps': 1000, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.004808789145916907, 'seconds': 63.7, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.003912131915313809, 'seconds': 193.1, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 6, 'steps': 1000, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.04761060640572932, 'seconds': 76.2, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 7, 'steps': 1000, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.026338197989734427, 'seconds': 177.7, 'device': 'cpu'}
+{'model': 'nbeats-seed2', 'select': 'insample', 'grid_name': 'reduced', 'seed': 2, 'device': 'cpu', 'dataset': 'heartrate', 'selected': {'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.003912131915313809, 'seconds': 193.1, 'device': 'cpu'}, 'n_windows': 1794, 'seconds': 565.3, 'grid_seconds_total': 564.1, 'peak_rss_mb': 1275.0, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__nbeats-seed2.npz'}
+END heartrate nbeats-seed2 rc=0 Sat Oct 24 15:50:04 PDT 2026
+START crime nbeats-seed2 Sat Oct 24 15:50:04 PDT 2026
+tag=nbeats-seed2 device=cpu configs=8 resumed=0
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 0, 'steps': 100, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.6125759339917981, 'seconds': 12.0, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 1, 'steps': 100, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.6032908607394732, 'seconds': 23.2, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 2, 'steps': 100, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.8166571583250078, 'seconds': 9.3, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 3, 'steps': 100, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.6949053775783042, 'seconds': 23.8, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 4, 'steps': 1000, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.23289470248948838, 'seconds': 186.6, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.06300230222277961, 'seconds': 388.0, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 6, 'steps': 1000, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.54846427928768, 'seconds': 95.8, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 7, 'steps': 1000, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.4520684334199922, 'seconds': 493.3, 'device': 'cpu'}
+{'model': 'nbeats-seed2', 'select': 'insample', 'grid_name': 'reduced', 'seed': 2, 'device': 'cpu', 'dataset': 'crime', 'selected': {'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.06300230222277961, 'seconds': 388.0, 'device': 'cpu'}, 'n_windows': 4030, 'seconds': 1234.9, 'grid_seconds_total': 1232.0, 'peak_rss_mb': 1351.8, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/crime__nbeats-seed2.npz'}
+END crime nbeats-seed2 rc=0 Sat Oct 24 16:10:41 PDT 2026
+START glucose nbeats-seed2 Sat Oct 24 16:10:41 PDT 2026
+tag=nbeats-seed2 device=cpu configs=8 resumed=0
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 0, 'steps': 100, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.24418218070803946, 'seconds': 11.9, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 1, 'steps': 100, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.19330084364826333, 'seconds': 21.4, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 2, 'steps': 100, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.6547422088518962, 'seconds': 8.5, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=100` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 3, 'steps': 100, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.5508992117621953, 'seconds': 22.2, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 4, 'steps': 1000, 'lr': 0.001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.02666386056181911, 'seconds': 77.5, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.018356862009577462, 'seconds': 218.9, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 6, 'steps': 1000, 'lr': 0.0001, 'blocks': [1, 1, 1], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.10218692983031721, 'seconds': 333.3, 'device': 'cpu'}
+Seed set to 2
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+`Trainer.fit` stopped: `max_steps=1000` reached.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+{'config_id': 7, 'steps': 1000, 'lr': 0.0001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.06021525395247377, 'seconds': 208.3, 'device': 'cpu'}
+{'model': 'nbeats-seed2', 'select': 'insample', 'grid_name': 'reduced', 'seed': 2, 'device': 'cpu', 'dataset': 'glucose', 'selected': {'config_id': 5, 'steps': 1000, 'lr': 0.001, 'blocks': [3, 3, 3], 'patience': -1, 'val_check': 100, 'loss': 'quantile', 'train_wql': 0.018356862009577462, 'seconds': 218.9, 'device': 'cpu'}, 'n_windows': 13040, 'seconds': 909.9, 'grid_seconds_total': 902.0, 'peak_rss_mb': 1316.7, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/glucose__nbeats-seed2.npz'}
+END glucose nbeats-seed2 rc=0 Sat Oct 24 16:25:54 PDT 2026

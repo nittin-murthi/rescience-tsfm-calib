@@ -1,0 +1,11 @@
+date: Sat Oct 24 22:52:34 PDT 2026
+os: Darwin <hostname> 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:18:48 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6020 arm64
+device: mps
+python 3.12.11
+torch 2.5.1 cuda None cuda_available False
+mps_available True
+neuralforecast 3.1.9
+gpu -
+nvidia-smi: not available
+Apple M2 Max
+34359738368

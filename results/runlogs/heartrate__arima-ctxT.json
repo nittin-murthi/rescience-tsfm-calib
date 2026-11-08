@@ -1,0 +1,107 @@
+{
+  "model": "arima-ctxT",
+  "dataset": "heartrate",
+  "refit_context": 128,
+  "n_windows": 1794,
+  "n_refit_failures": {
+    "css_ml_ok": 1732,
+    "ml_retry": 62,
+    "css_retry": 0,
+    "random_walk_fallback": 0
+  },
+  "orders": {
+    "M1": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "M10": {
+      "order": [
+        4,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "M11": {
+      "order": [
+        4,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "M12": {
+      "order": [
+        4,
+        1,
+        1
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "M2": {
+      "order": [
+        4,
+        1,
+        5
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": true
+    },
+    "M8": {
+      "order": [
+        5,
+        1,
+        5
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    }
+  },
+  "seconds": 15.1,
+  "peak_rss_mb": 235.4,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/heartrate__arima-ctxT.npz"
+}

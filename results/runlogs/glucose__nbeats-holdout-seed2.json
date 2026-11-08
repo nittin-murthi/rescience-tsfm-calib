@@ -1,0 +1,159 @@
+{
+  "model": "nbeats-holdout-seed2",
+  "select": "holdout",
+  "grid_name": "reduced",
+  "seed": 2,
+  "device": "cpu",
+  "dataset": "glucose",
+  "grid": [
+    {
+      "config_id": 0,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.6434429961612511,
+      "seconds": 10.0,
+      "device": "cpu"
+    },
+    {
+      "config_id": 1,
+      "steps": 100,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.5608045168854632,
+      "seconds": 23.3,
+      "device": "cpu"
+    },
+    {
+      "config_id": 2,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1481994894592493,
+      "seconds": 8.4,
+      "device": "cpu"
+    },
+    {
+      "config_id": 3,
+      "steps": 100,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.1761705377011986,
+      "seconds": 21.2,
+      "device": "cpu"
+    },
+    {
+      "config_id": 4,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.464023478141386,
+      "seconds": 74.6,
+      "device": "cpu"
+    },
+    {
+      "config_id": 5,
+      "steps": 1000,
+      "lr": 0.001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.4995580327355476,
+      "seconds": 475.9,
+      "device": "cpu"
+    },
+    {
+      "config_id": 6,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        1,
+        1,
+        1
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.7237213529238051,
+      "seconds": 75.1,
+      "device": "cpu"
+    },
+    {
+      "config_id": 7,
+      "steps": 1000,
+      "lr": 0.0001,
+      "blocks": [
+        3,
+        3,
+        3
+      ],
+      "patience": -1,
+      "val_check": 100,
+      "loss": "quantile",
+      "train_wql": 1.5939589842355182,
+      "seconds": 207.8,
+      "device": "cpu"
+    }
+  ],
+  "selected": {
+    "config_id": 2,
+    "steps": 100,
+    "lr": 0.0001,
+    "blocks": [
+      1,
+      1,
+      1
+    ],
+    "patience": -1,
+    "val_check": 100,
+    "loss": "quantile",
+    "train_wql": 1.1481994894592493,
+    "seconds": 8.4,
+    "device": "cpu"
+  },
+  "n_windows": 13040,
+  "seconds": 911.0,
+  "grid_seconds_total": 896.3,
+  "peak_rss_mb": 1352.8,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/glucose__nbeats-holdout-seed2.npz"
+}

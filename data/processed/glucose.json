@@ -1,0 +1,12 @@
+{
+  "name": "glucose",
+  "split": 808,
+  "freq": "5min",
+  "n_series": 16,
+  "steps_per_series": 1686,
+  "n_forecasts": 13040,
+  "L": 64,
+  "T": 512,
+  "season": 1,
+  "stride": 1
+}

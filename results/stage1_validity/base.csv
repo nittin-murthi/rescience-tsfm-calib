@@ -1,0 +1,86 @@
+dataset,model,check,ok,value,detail
+patents,,data_sha256_patents.csv,True,cb803ed0fcec,vs CHECKSUMS.sha256
+m5,,data_sha256_m5.csv,True,b4bf168d437e,vs CHECKSUMS.sha256
+patents,,data_sha256_patents.json,True,bd30ead7fb8d,vs CHECKSUMS.sha256
+m5,,data_sha256_m5.json,True,cc578a1d04f9,vs CHECKSUMS.sha256
+patents,,T_L_vs_Table2,True,T=128 L=64 stride=1 split=276,Paper Table 2
+patents,arima-ctxT,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,arima-ctxT,Q_finite_sorted,True,2.16e+07,max |q|
+patents,arima*,A_orders_equal_box_reselection,True,83/83,"AutoARIMA on train split, box vs returned orders.json"
+patents,arima-ctxT,A_reforecast_spot,False,6.46e-03,"32 windows, refit W=128, rel max-abs err"
+patents,arima,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,arima,Q_finite_sorted,True,3.25e+06,max |q|
+patents,arima,A_reforecast_spot,False,2.12e-02,"32 windows, refit W=64, rel max-abs err"
+patents,chronos-bolt-base,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,chronos-bolt-base,Q_finite_sorted,True,2.32e+06,max |q|
+patents,chronos-bolt-small,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,chronos-bolt-small,Q_finite_sorted,True,2.35e+06,max |q|
+patents,nbeats-full-seed0,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,nbeats-full-seed0,Q_finite_sorted,True,3.1e+06,max |q|
+patents,nbeats-full-seed0,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+patents,nbeats-full-seed0,N_selected_is_argmin,True,37,argmin train_wql = 37; seed=0 select=insample
+patents,nbeats-full-seed1,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,nbeats-full-seed1,Q_finite_sorted,True,3.11e+06,max |q|
+patents,nbeats-full-seed1,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+patents,nbeats-full-seed1,N_selected_is_argmin,True,39,argmin train_wql = 39; seed=1 select=insample
+patents,nbeats-full-seed2,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,nbeats-full-seed2,Q_finite_sorted,True,3.1e+06,max |q|
+patents,nbeats-full-seed2,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+patents,nbeats-full-seed2,N_selected_is_argmin,True,39,argmin train_wql = 39; seed=2 select=insample
+patents,nbeats-holdout-full-seed0,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,nbeats-holdout-full-seed0,Q_finite_sorted,True,3.44e+06,max |q|
+patents,nbeats-holdout-full-seed0,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+patents,nbeats-holdout-full-seed0,N_selected_is_argmin,True,3,argmin train_wql = 3; seed=0 select=holdout
+patents,nbeats-holdout-full-seed1,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,nbeats-holdout-full-seed1,Q_finite_sorted,True,3.3e+06,max |q|
+patents,nbeats-holdout-full-seed1,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+patents,nbeats-holdout-full-seed1,N_selected_is_argmin,True,3,argmin train_wql = 3; seed=1 select=holdout
+patents,nbeats-holdout-full-seed2,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,nbeats-holdout-full-seed2,Q_finite_sorted,True,3.4e+06,max |q|
+patents,nbeats-holdout-full-seed2,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+patents,nbeats-holdout-full-seed2,N_selected_is_argmin,True,5,argmin train_wql = 5; seed=2 select=holdout
+patents,timesfm-2.5-200m,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,timesfm-2.5-200m,Q_finite_sorted,True,2.47e+06,max |q|
+patents,tirex,W_windows_equal,True,"(5727, 64, 9)",target/series_id/origin vs box rebuild
+patents,tirex,Q_finite_sorted,True,2.3e+06,max |q|
+m5,,T_L_vs_Table2,True,T=512 L=64 stride=1 split=1545,Paper Table 2
+m5,arima-ctxT,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,arima-ctxT,Q_finite_sorted,True,6.97e+03,max |q|
+m5,arima*,A_orders_equal_box_reselection,False,68/70,"AutoARIMA on train split, box vs returned orders.json"
+m5,arima-ctxT,A_reforecast_spot,False,1.76e-02,"32 windows, refit W=512, rel max-abs err"
+m5,arima,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,arima,Q_finite_sorted,True,2.03e+04,max |q|
+m5,arima,A_reforecast_spot,False,5.55e-01,"32 windows, refit W=64, rel max-abs err"
+m5,chronos-bolt-base,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,chronos-bolt-base,Q_finite_sorted,True,5.07e+03,max |q|
+m5,chronos-bolt-small,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,chronos-bolt-small,Q_finite_sorted,True,5.02e+03,max |q|
+m5,nbeats-full-seed0,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,nbeats-full-seed0,Q_finite_sorted,True,5.21e+03,max |q|
+m5,nbeats-full-seed0,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+m5,nbeats-full-seed0,N_selected_is_argmin,True,37,argmin train_wql = 37; seed=0 select=insample
+m5,nbeats-full-seed1,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,nbeats-full-seed1,Q_finite_sorted,True,5.12e+03,max |q|
+m5,nbeats-full-seed1,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+m5,nbeats-full-seed1,N_selected_is_argmin,True,39,argmin train_wql = 39; seed=1 select=insample
+m5,nbeats-full-seed2,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,nbeats-full-seed2,Q_finite_sorted,True,4.99e+03,max |q|
+m5,nbeats-full-seed2,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+m5,nbeats-full-seed2,N_selected_is_argmin,True,37,argmin train_wql = 37; seed=2 select=insample
+m5,nbeats-holdout-full-seed0,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,nbeats-holdout-full-seed0,Q_finite_sorted,True,4.93e+03,max |q|
+m5,nbeats-holdout-full-seed0,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+m5,nbeats-holdout-full-seed0,N_selected_is_argmin,True,51,argmin train_wql = 51; seed=0 select=holdout
+m5,nbeats-holdout-full-seed1,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,nbeats-holdout-full-seed1,Q_finite_sorted,True,5.08e+03,max |q|
+m5,nbeats-holdout-full-seed1,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+m5,nbeats-holdout-full-seed1,N_selected_is_argmin,True,3,argmin train_wql = 3; seed=1 select=holdout
+m5,nbeats-holdout-full-seed2,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,nbeats-holdout-full-seed2,Q_finite_sorted,True,4.91e+03,max |q|
+m5,nbeats-holdout-full-seed2,N_grid_complete,True,64,"64 configs; 0 infeasible configs (error logged, scored +inf)"
+m5,nbeats-holdout-full-seed2,N_selected_is_argmin,True,45,argmin train_wql = 45; seed=2 select=holdout
+m5,timesfm-2.5-200m,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,timesfm-2.5-200m,Q_finite_sorted,True,4.8e+03,max |q|
+m5,tirex,W_windows_equal,True,"(21280, 64, 9)",target/series_id/origin vs box rebuild
+m5,tirex,Q_finite_sorted,True,5.24e+03,max |q|
+patents+m5,all,E_reevaluate_equals_returned_summary,True,0.00e+00,max rel diff over 24 rows x 14 cols (CSV has 6 d.p.)

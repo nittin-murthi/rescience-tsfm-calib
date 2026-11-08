@@ -1,0 +1,84 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+# "[Re]" = replication (independent re-implementation from the paper text). The verdict is "partially
+# reproduced", which the subtitle states explicitly.
+title: "[Re] Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated? A Partial Replication"
+
+authors:
+  - name: Nittin Murthi Dhekshinamoorthy
+    orcid: ""
+    email: ndhek2@illinois.edu
+    affiliations: 1,*
+
+affiliations:
+  - code:    1
+    name:    University of Illinois Urbana-Champaign
+    address: Urbana, IL, USA
+
+keywords: rescience c, time series, foundation models, calibration, forecasting, python
+
+code:
+  - url: https://github.com/nittin-murthi/rescience-tsfm-calib
+  - doi:
+  - swh:
+
+data:
+  - url:
+  - doi:
+
+replication:
+ - cite: "Coen Adler, Yuxin Chang, Felix Draxler, Samar Abdi and Padhraic Smyth. Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated? ICLR 2026. arXiv:2510.16060v2."
+ - bib:  adler2026beyond
+ - url:  https://arxiv.org/abs/2510.16060v2
+ - doi:  10.48550/arXiv.2510.16060
+
+abstract: "We independently re-implement, from the paper text, the main calibration experiment of Adler et al.
+           (ICLR 2026), which reports that time series foundation models (TSFMs) are better calibrated than
+           ARIMA and N-BEATS baselines and reach probabilistic calibration error (PCE) close to or below 0.05.
+           We test this claim on all six of the paper's real datasets (Reviews, M5, NYC Crime, Heart-Rate,
+           Glucose, Patents) with Chronos-Bolt (small, base), TimesFM 2.5 (200M, a substitute for the paper's
+           TimesFM 2.0), TiRex, ARIMA and N-BEATS (the paper's full grid, three seeds), using 64-step
+           rolling-origin forecasts. All TSFMs reach PCE at or below 0.06 on the five datasets where the paper
+           claims it; Patents, which the paper exempts, stays high. The TSFMs beat in-sample-selected N-BEATS on
+           every dataset and seed, and our primary ARIMA on four of six datasets. On M5 the substitute TimesFM is
+           worse than ARIMA, and on Patents all four TSFMs are. Our ARIMA is much better calibrated than the
+           paper's on every dataset. An ARIMA refit on the TSFM context matches or beats some TSFMs on four
+           datasets, and hold-out-selected N-BEATS beats the worst TSFM in six of eighteen runs. We therefore
+           judge the claim partially reproduced. A post-hoc comparison with the authors' code explains our
+           differences in MASE and in PCE aggregation, but not the ARIMA gap, because the baseline code is not
+           released."
+
+bibliography: bibliography.bib
+type: Replication
+domain: Machine Learning
+language: Python
+
+review:
+  - url:
+
+contributors:
+  - name:
+    orcid:
+    role: editor
+  - name:
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+dates:
+  - received:
+  - accepted:
+  - published:
+
+article:
+  - number:
+  - doi:
+  - url:
+
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume:
+  - issue:

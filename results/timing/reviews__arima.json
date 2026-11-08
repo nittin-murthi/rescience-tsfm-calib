@@ -1,0 +1,10 @@
+{
+  "model": "arima",
+  "dataset": "reviews",
+  "trial_windows": 400,
+  "total_windows": 358610,
+  "procs": 10,
+  "order_selection_seconds": 985.8,
+  "seconds": 25.15,
+  "sec_per_window": 0.06287904441356659
+}

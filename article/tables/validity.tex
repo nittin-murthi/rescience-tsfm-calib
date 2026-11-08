@@ -1,0 +1,23 @@
+\begin{tabular}{lllccc}
+\toprule
+Dataset & Model & check & max rel.\ err. / result & coverage agr. & PCE Mac / box \\
+\midrule
+Patents & Chronos-Bolt-S & re-forecast 32 windows (CPU) & 7.4e-06 & 1.0000 & 0.0405 / 0.0405 \\
+Patents & Chronos-Bolt-B & re-forecast 32 windows (CPU) & 9.9e-06 & 1.0000 & 0.0197 / 0.0197 \\
+Patents & TimesFM-2.5$^\dagger$ & re-forecast 32 windows (CPU) & 1.5e-05 & 1.0000 & 0.0174 / 0.0174 \\
+Patents & TiRex & re-forecast 32 windows (CPU) & 6.1e-03 & 0.9989 & 0.0152 / 0.0151 \\
+Patents & TiRex & re-forecast 1024 windows (CPU) & 3.4e-02 & 0.9993 & 0.0745 / 0.0745 \\
+Patents & ARIMA (64) & full re-run on x86 box & 2.1e-02 (32 win.)$^\S$ & -- & 0.1135 / 0.1135 \\
+Patents & ARIMA ($T$)$^\ast$ & full re-run on x86 box & 6.5e-03 (32 win.)$^\S$ & -- & 0.1302 / 0.1302 \\
+Patents & N-BEATS (6 runs) & grid 64/64, selection = argmin WQL & 6/6, 6/6 & -- & -- \\
+\midrule
+M5 & Chronos-Bolt-S & re-forecast 32 windows (CPU) & 2.1e-06 & 1.0000 & 0.0214 / 0.0214 \\
+M5 & Chronos-Bolt-B & re-forecast 32 windows (CPU) & 2.1e-06 & 1.0000 & 0.0135 / 0.0135 \\
+M5 & TimesFM-2.5$^\dagger$ & re-forecast 32 windows (CPU) & 3.8e-06 & 1.0000 & 0.0105 / 0.0105 \\
+M5 & TiRex & re-forecast 32 windows (CPU) & 1.9e-02 & 0.9989 & 0.0086 / 0.0087 \\
+M5 & TiRex & re-forecast 1024 windows (CPU) & 4.9e-02 & 0.9990 & 0.0153 / 0.0153 \\
+M5 & ARIMA (64) & full re-run on x86 box & 5.6e-01 (32 win.)$^\S$ & -- & 0.0486 / 0.0480 \\
+M5 & ARIMA ($T$)$^\ast$ & full re-run on x86 box & 1.8e-02 (32 win.)$^\S$ & -- & 0.0396 / 0.0394 \\
+M5 & N-BEATS (6 runs) & grid 64/64, selection = argmin WQL & 6/6, 6/6 & -- & -- \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,100 @@
+{
+  "model": "nbeats",
+  "select": "insample",
+  "dataset": "glucose",
+  "grid": [
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.23212809077734745
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.18061864727166696
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.6529136766329903
+    },
+    {
+      "max_steps": 100,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.5452772006949488
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.025506487180325887
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.019025602727424908
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        1,
+        1,
+        1
+      ],
+      "train_wql": 0.09455449760466866
+    },
+    {
+      "max_steps": 1000,
+      "lr": 0.0001,
+      "n_blocks": [
+        3,
+        3,
+        3
+      ],
+      "train_wql": 0.05971373327282384
+    }
+  ],
+  "selected": {
+    "max_steps": 1000,
+    "lr": 0.001,
+    "n_blocks": [
+      3,
+      3,
+      3
+    ]
+  },
+  "n_windows": 13040,
+  "seconds": 1496.1,
+  "peak_rss_mb": 1311.6,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/glucose__nbeats.npz"
+}

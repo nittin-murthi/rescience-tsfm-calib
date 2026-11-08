@@ -1,0 +1,13 @@
+dataset,model,pce,pce_per_window,pce_pooled_dataset
+reviews,arima,0.058275,0.168318,0.050249
+reviews,arima-ctxT,0.056787,0.158559,0.055736
+reviews,chronos-bolt-base,0.014250,0.126775,0.005650
+reviews,chronos-bolt-small,0.011095,0.127761,0.006044
+reviews,nbeats-full-seed0,0.062489,0.150099,0.061289
+reviews,nbeats-full-seed1,0.065939,0.153027,0.064804
+reviews,nbeats-full-seed2,0.068722,0.152755,0.067904
+reviews,nbeats-holdout-full-seed0,0.058080,0.162100,0.055539
+reviews,nbeats-holdout-full-seed1,0.046154,0.148283,0.041852
+reviews,nbeats-holdout-full-seed2,0.059073,0.162514,0.056679
+reviews,timesfm-2.5-200m,0.010801,0.121889,0.005347
+reviews,tirex,0.009610,0.124117,0.004695

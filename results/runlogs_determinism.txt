@@ -1,0 +1,6 @@
+{'model': 'chronos-bolt-small', 'hf_id': 'amazon/chronos-bolt-small', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 4.5, 'crossing_frac': 0.0, 'peak_rss_mb': 607.6, 'path': 'results/determinism/heartrate__chronos-bolt-small__repeat.npz'}
+{'model': 'chronos-bolt-base', 'hf_id': 'amazon/chronos-bolt-base', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 10.1, 'crossing_frac': 0.0, 'peak_rss_mb': 1254.1, 'path': 'results/determinism/heartrate__chronos-bolt-base__repeat.npz'}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'model': 'timesfm-2.5-200m', 'hf_id': 'google/timesfm-2.5-200m-pytorch', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 16.2, 'crossing_frac': 0.0, 'peak_rss_mb': 2063.1, 'path': 'results/determinism/heartrate__timesfm-2.5-200m__repeat.npz'}
+{'model': 'tirex', 'hf_id': 'NX-AI/TiRex', 'dataset': 'heartrate', 'n_windows': 1794, 'seconds': 1490.5, 'crossing_frac': 4.35479375696767e-06, 'peak_rss_mb': 705.2, 'path': 'results/determinism/heartrate__tirex__repeat.npz'}
+DET_DONE

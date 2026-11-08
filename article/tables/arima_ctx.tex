@@ -1,0 +1,24 @@
+\begin{tabular}{llrrrrl}
+\toprule
+Dataset & $W$ & PCE & CCE & MASE & TSFMs beaten & C1a \\
+\midrule
+Crime & 32 & 0.112 & -0.249 & 1.139 & 0/4 & holds \\
+ & 64 (primary) & 0.065 & -0.140 & 1.029 & 0/4 & holds \\
+ & 128 & 0.037 & -0.078 & 0.976 & 0/4 & holds \\
+ & 256 & 0.030 & -0.057 & 0.956 & 1/4 & fails \\
+ & 512 ($=T$) & 0.024 & -0.041 & 0.942 & 3/4 & fails \\
+ & \multicolumn{6}{l}{\scriptsize TSFM PCE range 0.023--0.035; paper ARIMA 0.168} \\
+\midrule
+Glucose & 32 & 0.055 & +0.033 & $>$100$^\ddagger$ & 0/4 & holds \\
+ & 64 (primary) & 0.055 & -0.022 & $>$100$^\ddagger$ & 0/4 & holds \\
+ & 128 & 0.062 & -0.071 & 8.929 & 0/4 & holds \\
+ & 256 & 0.066 & -0.108 & 7.990 & 0/4 & holds \\
+ & 512 ($=T$) & 0.067 & -0.102 & 8.476 & 0/4 & holds \\
+ & \multicolumn{6}{l}{\scriptsize TSFM PCE range 0.028--0.033; paper ARIMA 0.141} \\
+\midrule
+Heart-Rate & 32 & 0.086 & -0.176 & 2.203 & 0/4 & holds \\
+ & 64 (primary) & 0.066 & -0.131 & 1.842 & 0/4 & holds \\
+ & 128 ($=T$) & 0.055 & -0.100 & 1.591 & 1/4 & fails \\
+ & \multicolumn{6}{l}{\scriptsize TSFM PCE range 0.036--0.055; paper ARIMA 0.204} \\
+\bottomrule
+\end{tabular}

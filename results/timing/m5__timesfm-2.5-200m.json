@@ -1,0 +1,11 @@
+{
+  "model": "timesfm-2.5-200m",
+  "dataset": "m5",
+  "trial_windows": 256,
+  "total_windows": 21280,
+  "device": "cpu",
+  "device_note": "fallback: mps failed (TypeError: Cannot convert a MPS Tensor to float64 dtype as the MPS framework doesn't support float64. Please use float32 instead.)",
+  "seconds": 2.72,
+  "load_seconds": 1.9,
+  "sec_per_window": 0.010642667300999165
+}

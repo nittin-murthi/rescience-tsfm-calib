@@ -1,0 +1,22 @@
+START crime ctx32 Sun Oct 25 13:36:56 PDT 2026
+{'model': 'arima-ctx32', 'dataset': 'crime', 'refit_context': 32, 'n_windows': 4030, 'n_refit_failures': {'css_ml_ok': 2945, 'ml_retry': 1085, 'css_retry': 0, 'random_walk_fallback': 0}, 'guard': False, 'seconds': 130.9, 'peak_rss_mb': 274.8, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/crime__arima-ctx32.npz'}
+END crime ctx32 rc=0 Sun Oct 25 13:39:08 PDT 2026
+START crime ctx128 Sun Oct 25 13:39:08 PDT 2026
+{'model': 'arima-ctx128', 'dataset': 'crime', 'refit_context': 128, 'n_windows': 4030, 'n_refit_failures': {'css_ml_ok': 3812, 'ml_retry': 218, 'css_retry': 0, 'random_walk_fallback': 0}, 'guard': False, 'seconds': 145.1, 'peak_rss_mb': 275.1, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/crime__arima-ctx128.npz'}
+END crime ctx128 rc=0 Sun Oct 25 13:41:34 PDT 2026
+START crime ctx256 Sun Oct 25 13:41:34 PDT 2026
+{'model': 'arima-ctx256', 'dataset': 'crime', 'refit_context': 256, 'n_windows': 4030, 'n_refit_failures': {'css_ml_ok': 3857, 'ml_retry': 173, 'css_retry': 0, 'random_walk_fallback': 0}, 'guard': False, 'seconds': 162.9, 'peak_rss_mb': 273.0, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/crime__arima-ctx256.npz'}
+END crime ctx256 rc=0 Sun Oct 25 13:44:18 PDT 2026
+START glucose ctx32 Sun Oct 25 13:44:18 PDT 2026
+{'model': 'arima-ctx32', 'dataset': 'glucose', 'refit_context': 32, 'n_windows': 13040, 'n_refit_failures': {'css_ml_ok': 11628, 'ml_retry': 1412, 'css_retry': 0, 'random_walk_fallback': 0}, 'guard': False, 'seconds': 104.4, 'peak_rss_mb': 378.1, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/glucose__arima-ctx32.npz'}
+END glucose ctx32 rc=0 Sun Oct 25 13:46:04 PDT 2026
+START glucose ctx128 Sun Oct 25 13:46:04 PDT 2026
+{'model': 'arima-ctx128', 'dataset': 'glucose', 'refit_context': 128, 'n_windows': 13040, 'n_refit_failures': {'css_ml_ok': 12843, 'ml_retry': 197, 'css_retry': 0, 'random_walk_fallback': 0}, 'guard': False, 'seconds': 104.9, 'peak_rss_mb': 379.1, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/glucose__arima-ctx128.npz'}
+END glucose ctx128 rc=0 Sun Oct 25 13:47:50 PDT 2026
+START glucose ctx256 Sun Oct 25 13:47:50 PDT 2026
+{'model': 'arima-ctx256', 'dataset': 'glucose', 'refit_context': 256, 'n_windows': 13040, 'n_refit_failures': {'css_ml_ok': 13006, 'ml_retry': 34, 'css_retry': 0, 'random_walk_fallback': 0}, 'guard': False, 'seconds': 112.5, 'peak_rss_mb': 378.2, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/glucose__arima-ctx256.npz'}
+END glucose ctx256 rc=0 Sun Oct 25 13:49:43 PDT 2026
+START heartrate ctx32 Sun Oct 25 13:49:43 PDT 2026
+{'model': 'arima-ctx32', 'dataset': 'heartrate', 'refit_context': 32, 'n_windows': 1794, 'n_refit_failures': {'css_ml_ok': 1447, 'ml_retry': 347, 'css_retry': 0, 'random_walk_fallback': 0}, 'guard': False, 'seconds': 15.5, 'peak_rss_mb': 234.1, 'path': '/workspace/rescience-tsfm-calib/results/forecasts/heartrate__arima-ctx32.npz'}
+END heartrate ctx32 rc=0 Sun Oct 25 13:50:00 PDT 2026
+SWEEP_DONE

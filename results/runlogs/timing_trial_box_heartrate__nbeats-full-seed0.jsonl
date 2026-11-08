@@ -1,0 +1,4 @@
+{"config_id": 0, "steps": 100, "lr": 0.001, "patience": -1, "blocks": [1, 1, 1], "val_check": 10, "loss": "normal", "train_wql": 0.14125865783159539, "seconds": 11.7, "device": "cpu"}
+{"config_id": 1, "steps": 100, "lr": 0.001, "patience": -1, "blocks": [1, 1, 1], "val_check": 10, "loss": "quantile", "train_wql": 0.11408343138829621, "seconds": 15.8, "device": "cpu"}
+{"config_id": 5, "steps": 100, "lr": 0.001, "patience": -1, "blocks": [3, 3, 3], "val_check": 10, "loss": "quantile", "train_wql": 0.06866196538540222, "seconds": 47.0, "device": "cpu"}
+{"config_id": 33, "steps": 1000, "lr": 0.001, "patience": -1, "blocks": [1, 1, 1], "val_check": 10, "loss": "quantile", "train_wql": 0.005132178415699085, "seconds": 140.6, "device": "cpu"}

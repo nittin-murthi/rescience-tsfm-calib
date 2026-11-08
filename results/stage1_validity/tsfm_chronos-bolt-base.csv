@@ -1,0 +1,3 @@
+dataset,model,check,ok,value,detail
+patents,chronos-bolt-base,M_reforecast_spot_pinned_rev_K32,True,9.95e-06,"32 windows on box CPU, rev 5d9f166d; coverage-indicator agreement 1.0000; pooled PCE on these windows returned 0.0197 vs box 0.0197"
+m5,chronos-bolt-base,M_reforecast_spot_pinned_rev_K32,True,2.11e-06,"32 windows on box CPU, rev 5d9f166d; coverage-indicator agreement 1.0000; pooled PCE on these windows returned 0.0135 vs box 0.0135"

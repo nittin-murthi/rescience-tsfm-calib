@@ -1,0 +1,10 @@
+{
+  "model": "chronos-bolt-small",
+  "hf_id": "amazon/chronos-bolt-small",
+  "dataset": "crime",
+  "n_windows": 4030,
+  "seconds": 222.1,
+  "crossing_frac": 0.0,
+  "peak_rss_mb": 698.7,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/crime__chronos-bolt-small.npz"
+}

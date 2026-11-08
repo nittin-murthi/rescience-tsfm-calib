@@ -1,0 +1,3 @@
+Built by scripts/build_publication_package.py from development commit c1fbd1f63b7850e352db8cd1fec0df95c4572f20.
+Run-log paths and host names were redacted (/Users/<user>, <hostname>); no values changed.
+Data, forecasts, model weights and environments are not included; see REPRODUCE.md.

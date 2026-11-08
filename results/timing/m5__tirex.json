@@ -1,0 +1,11 @@
+{
+  "model": "tirex",
+  "dataset": "m5",
+  "trial_windows": 256,
+  "total_windows": 21280,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 2.60e-03 on 16 windows)",
+  "seconds": 12.03,
+  "load_seconds": 6.3,
+  "sec_per_window": 0.04699278902262449
+}

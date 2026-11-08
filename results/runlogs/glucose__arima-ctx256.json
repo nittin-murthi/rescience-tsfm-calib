@@ -1,0 +1,258 @@
+{
+  "model": "arima-ctx256",
+  "dataset": "glucose",
+  "refit_context": 256,
+  "n_windows": 13040,
+  "n_refit_failures": {
+    "css_ml_ok": 13006,
+    "ml_retry": 34,
+    "css_retry": 0,
+    "random_walk_fallback": 0
+  },
+  "guard": false,
+  "orders": {
+    "1": {
+      "order": [
+        3,
+        0,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": true,
+      "include_drift": false
+    },
+    "2": {
+      "order": [
+        5,
+        0,
+        4
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": true,
+      "include_drift": false
+    },
+    "3": {
+      "order": [
+        2,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "4": {
+      "order": [
+        2,
+        1,
+        4
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "5": {
+      "order": [
+        2,
+        0,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": true,
+      "include_drift": false
+    },
+    "6": {
+      "order": [
+        5,
+        0,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": true,
+      "include_drift": false
+    },
+    "7": {
+      "order": [
+        1,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "8": {
+      "order": [
+        2,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "9": {
+      "order": [
+        3,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "10": {
+      "order": [
+        2,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "11": {
+      "order": [
+        2,
+        0,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": true,
+      "include_drift": false
+    },
+    "12": {
+      "order": [
+        4,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "13": {
+      "order": [
+        3,
+        1,
+        3
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "14": {
+      "order": [
+        3,
+        0,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": true,
+      "include_drift": false
+    },
+    "15": {
+      "order": [
+        2,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": false,
+      "include_drift": false
+    },
+    "16": {
+      "order": [
+        2,
+        0,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0
+      ],
+      "season": 1,
+      "include_mean": true,
+      "include_drift": false
+    }
+  },
+  "seconds": 112.5,
+  "peak_rss_mb": 378.2,
+  "path": "/workspace/rescience-tsfm-calib/results/forecasts/glucose__arima-ctx256.npz"
+}

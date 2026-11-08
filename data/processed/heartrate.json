@@ -1,0 +1,12 @@
+{
+  "name": "heartrate",
+  "split": 300,
+  "freq": "s",
+  "n_series": 6,
+  "steps_per_series": 662,
+  "n_forecasts": 1794,
+  "L": 64,
+  "T": 128,
+  "season": 1,
+  "stride": 1
+}

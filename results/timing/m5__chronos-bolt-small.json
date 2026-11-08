@@ -1,0 +1,11 @@
+{
+  "model": "chronos-bolt-small",
+  "dataset": "m5",
+  "trial_windows": 256,
+  "total_windows": 21280,
+  "device": "mps",
+  "device_note": "mps ok (rel err vs cpu 1.19e-06 on 16 windows)",
+  "seconds": 0.33,
+  "load_seconds": 2.4,
+  "sec_per_window": 0.0012974180281162262
+}
